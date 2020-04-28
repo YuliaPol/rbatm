@@ -1,0 +1,694 @@
+<!DOCTYPE html>
+<html lang="en-US" style="height: auto; min-height: 100%;">
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Ключевые показатели</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.css">
+    <link href="https://rbatm.ru/admin/assets/53bf7e5d/css/bootstrap.css" rel="stylesheet">
+    <link href="//netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap-glyphicons.css" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/daterangepicker/daterangepicker.css" />
+    <link rel="stylesheet" href="./assets/css/style.css">
+</head>
+
+<body>
+    <div class="wrapper">
+        <header class="main-header">
+            <a class="logo" href="https://rbatm.ru/admin">
+                <span class="logo-mini"></span>
+                <span class="logo-lg"></span>
+            </a>
+            <nav class="navbar navbar-static-top" role="navigation">
+                <a href="javascript:void(0);" class="sidebar-toggle" role="button">
+                </a>
+                <div class="navbar-user-menu">
+                    <ul class="nav navbar-nav">
+                        <li class="dropdown user user-menu">
+                            <a href="https://rbatm.ru/admin/total#" class="dropdown-toggle" data-toggle="dropdown">
+                                Лихачов Дмитрий Сергеевич
+                            </a>
+                            <ul class="dropdown-menu">
+                                <li class="user-footer">
+                                    <div class="pull-right">
+                                        <a class="btn btn-default" href="https://rbatm.ru/admin/site/logout"
+                                            data-method="post">Sign out</a>
+                                    </div>
+                                </li>
+                            </ul>
+                        </li>
+                    </ul>
+                </div>
+            </nav>
+        </header>
+        <aside class="main-sidebar">
+            <section class="sidebar">
+                <ul class="sidebar-menu">
+                    <li>
+                        <a href="./total.html">
+                            <i class="fa fa-pie-chart"></i>
+                            <span>Ключевые пареметры</span>
+                        </a>
+                    </li>
+                    <li class="active">
+                        <a href="./list.html">
+                            <i class="fa fa-list"></i>
+                            <span>Анкеты</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="./locations.html">
+                            <i class="fa fa-university"></i>
+                            <span>Локации</span>
+                        </a>
+                    </li>
+                    <li class="treeview">
+                        <a href="#">
+                            <i class="fa fa-cubes"></i>
+                            <span>Шаблоны</span>
+                            <span class="pull-right-container">
+                                <i class="fa fa-angle-left pull-right"></i>
+                            </span>
+                        </a>
+                        <ul class="treeview-menu">
+                            <li><a href="./list-answer-template-text.html">
+                                    <i class="round perple"></i>
+                                    <span>Шаблоны фраз</span>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="./quiz.html">
+                                    <i class="round yellow"></i>
+                                    <span>Управление
+                                        рассылкой</span>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#">
+                                    <i class="round red"></i>
+                                    <span>Алерты
+                                    </span>
+                                </a>
+                            </li>
+                        </ul>
+                    </li>
+                    <li>
+                        <a href="./reference.html">
+                            <i class="fa fa-newspaper-o"></i>
+                            <span>Пользовательское соглашение</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="./user.html">
+                            <i class="fa fa-users"></i>
+                            <span>Пользователи</span>
+                        </a>
+                    </li>
+                </ul>
+            </section>
+        </aside>
+        <div class="content-wrapper">
+            <section class="content-header">
+                <div class="Breadcrumbs-top">
+                    <ul class="breadcrumb">
+                        <li><a href="#"><i class="fa fa-home pr-2"></i>Home</a></li>
+                        <li class="active">Список анкет с ответами</li>
+                    </ul>
+                </div>
+                <h1>Список анкет с ответами</h1>
+            </section>
+            <section class="content">
+                <div class="box-header">
+                    <form method="get" id="filter-form">
+                        <div class="box-wrap">
+                            <div class="box">
+                                <h6>Регион</h6>
+                                <select class="form-control input-sm" name="AnswersSearch[region]" onchange="dpfunc()">
+                                    <option value="all">Все</option>
+                                    <optgroup label="Регион">
+                                        <option value="Центр">Центр</option>
+                                        <option value="Восток">Восток</option>
+                                        <option value="Запад">Запад</option>
+                                    </optgroup>
+                                </select>
+                            </div>
+                            <div class="box">
+                                <h6>Город</h6>
+                                <select class="form-control input-sm" name="AnswersSearch[city]" onchange="dpfunc()">
+                                    <option value="all">Все</option>
+                                    <optgroup label="Город">
+                                        <option value="Всеволожск">Всеволожск</option>
+                                        <option value="Гатчина">Гатчина</option>
+                                        <option value="Кудрово">Кудрово</option>
+                                        <option value="Левашово">Левашово</option>
+                                        <option value="Луга">Луга</option>
+                                        <option value="Парголово">Парголово</option>
+                                        <option value="Пушкин">Пушкин</option>
+                                        <option value="Санкт-Петербург">Санкт-Петербург</option>
+                                        <option value="Северная часть Горелово">Северная часть Горелово</option>
+                                        <option value="Сестрорецк">Сестрорецк</option>
+                                        <option value="Стрельна">Стрельна</option>
+                                        <option value="Шушары">Шушары</option>
+                                    </optgroup>
+                                </select>
+                            </div>
+                            <div class="box">
+                                <h6>Локация</h6>
+                                <select class="form-control input-sm" name="AnswersSearch[location]"
+                                    onchange="dpfunc()">
+                                    <option value="all">Локация</option>
+                                    <optgroup label="Макрорегионы">
+                                        <option value="Город Санкт-Петербург Проспект Искровский Дом 29, кор. 2, лит.А">
+                                            Город
+                                            Санкт-Петербург Проспект Искровский Дом 29, кор. 2, лит.А</option>
+                                        <option value="Город Санкт-Петербург Проспект Малый ВО Дом 22, лит. А">Город
+                                            Санкт-Петербург
+                                            Проспект Малый ВО Дом 22, лит. А</option>
+                                        <option value="Город Санкт-Петербург Проспект Чернышевского Дом 17А ">
+                                            Город
+                                            Санкт-Петербург Проспект Чернышевского Дом 17А </option>
+                                        <option value="Город Санкт-Петербург Проспект Культуры Дом 41">
+                                            Город
+                                            Санкт-Петербург Проспект Культуры Дом 41</option>
+                                        <option value="Город Санкт-Петербург Проспект Искровский Дом 29, кор. 2, лит.А">
+                                            Город
+                                            Санкт-Петербург Проспект Искровский Дом 29, кор. 2, лит.А</option>
+                                        <option value=" Санкт-Петербург Улица Ефимова Дом 2"> Санкт-Петербург Улица
+                                            Ефимова Дом 2
+                                        </option>
+                                        <option
+                                            value="Город Санкт-Петербург Поселок Стрельна Улица Связи Дом 34, лит. А">
+                                            Город
+                                            Санкт-Петербург Поселок Стрельна Улица Связи Дом 34, лит. А</option>
+                                        <option value="Город Санкт-Петербург Город Пушкин Улица Московская Дом 25А">
+                                            Город
+                                            Санкт-Петербург
+                                            Город Пушкин Улица Московская Дом 25Аг</option>
+                                        <option value="Санкт-Петербург Шоссе Петергофское Дом 98 ">Санкт-Петербург Шоссе
+                                            Петергофское
+                                            Дом 98
+                                        </option>
+                                        <option value="Санкт-Петербург Проспект Большевиков Дом 27 А">Санкт-Петербург
+                                            Проспект
+                                            Большевиков
+                                            Дом 27 А</option>
+                                        <option
+                                            value="Область Ленинградская Район Всеволожский Город Всеволожск Шоссе Дорога Жизни 7-й км">
+                                            Область
+                                            Ленинградская Район
+                                            Всеволожский Город Всеволожск
+                                            Шоссе Дорога
+                                            Жизни 7-й км</option>
+                                        <option value="Город Санкт-Петербург Улица Ярослава Гашека Дом 5">
+                                            Город
+                                            Санкт-Петербург Улица Ярослава Гашека Дом 5</option>
+                                        <option value="Город Санкт-Петербург Улица Московская Б. Дом 8/2, лит. А ">Город
+                                            Санкт-Петербург
+                                            Улица Московская Б. Дом 8/2, лит. А </option>
+                                        <option value="Город Санкт-Петербург Бульвар Новаторов Дом 11а">
+                                            Город
+                                            Санкт-Петербург Бульвар Новаторов Дом 11а</option>
+                                        <option value="Город Санкт-Петербург Улица Советская 2-я Дом 17, лит. А">Город
+                                            Санкт-Петербург
+                                            Улица
+                                            Советская 2-я Дом 17, лит. А</option>
+                                        <option value="Город Санкт-Петербург Проспект Науки Дом 17, корп. 1, лит. А">
+                                            Город
+                                            Санкт-Петербург
+                                            Проспект Науки Дом 17, корп. 1, лит. А</option>
+                                        <option
+                                            value="Город Санкт-Петербург Проспект Дальневосточный Дом 16, корп.1, литер А">
+                                            Город
+                                            Санкт-Петербург Проспект Дальневосточный Дом 16, корп.1, литер А</option>
+                                        <option value="Город Санкт-Петербург Площадь Балканская Дом 5">
+                                            Город
+                                            Санкт-Петербург Площадь Балканская Дом 5</option>
+                                        <option value="Город Санкт-Петербург Улица Савушкина Дом 141 А ">
+                                            Город
+                                            Санкт-Петербург Улица Савушкина Дом 141 А </option>
+                                        <option value="Город Санкт-Петербург Улица Боровая Дом 47 ">
+                                            Город
+                                            Санкт-Петербург Улица Боровая Дом 47 </option>
+                                        <option value="Город Санкт-Петербург Улица Партизана Германа Дом 2, лит. А">
+                                            Город
+                                            Санкт-Петербург
+                                            Улица Партизана Германа Дом 2, лит. А</option>
+                                        <option value="Город Санкт-Петербург Улица Большая Посадская Дом 12, лит. О">
+                                            Город
+                                            Санкт-Петербург
+                                            Улица Большая Посадская Дом 12, лит. О</option>
+                                        <option
+                                            value="Область Ленинградская Район Гатчинский Город Гатчина Шоссе Ленинградское Дом 12">
+                                            Область Ленинградская
+                                            Район Гатчинский
+                                            Город Гатчина Шоссе
+                                            Ленинградское
+                                            Дом 12</option>
+                                        <option value="Город Санкт-Петербург Улица Ярослава Гашека Дом 5, Н-6">Город
+                                            Санкт-Петербург
+                                            Улица
+                                            Ярослава Гашека Дом 5, Н-6</option>
+                                        <option value="Город Санкт-Петербург Проспект Индустриальный Дом 25">
+                                            Город
+                                            Санкт-Петербург Проспект Индустриальный Дом 25</option>
+                                        <option value="Город Санкт-Петербург Проспект Московский Дом 171, лит. А ">Город
+                                            Санкт-Петербург
+                                            Проспект Московский Дом 171, лит. А </option>
+                                        <option value="Город Санкт-Петербург Улица Бухарестская Дом 69-А">
+                                            Город
+                                            Санкт-Петербург Улица Бухарестская Дом 69-А</option>
+                                        <option value="Город Санкт-Петербург Шоссе Петергофское Дом 51А">
+                                            Город
+                                            Санкт-Петербург Шоссе Петергофское Дом 51А</option>
+                                        <option value="Город Санкт-Петербург Улица Хасанская Дом 17">
+                                            Город
+                                            Санкт-Петербург Улица Хасанская Дом 17</option>
+                                        <option value="Город Санкт-Петербург Улица Седова Дом 11 лит. А">
+                                            Город
+                                            Санкт-Петербург Улица Седова Дом 11 лит. А</option>
+                                        <option value="Город Санкт-Петербург Шоссе Революции Дом 41/39">
+                                            Город
+                                            Санкт-Петербург Шоссе Революции Дом 41/39</option>
+                                    </optgroup>
+                                </select>
+                            </div>
+                            <div class="box">
+                                <h6>Оценка</h6>
+                                <select class="form-control input-sm" name="AnswersSearch[review_rating]"
+                                    onchange="dpfunc()">
+                                    <option value="all">Все</option>
+                                    <optgroup label="Оценка">
+                                        <option value="1">Только по оценке</option>
+                                        <option value="2">С комментарием</option>
+                                    </optgroup>
+                                </select>
+                            </div>
+                        </div>
+                        <button type="submit" id="form_send" class="btn-hide">Отправить</button>
+                    </form>
+                    <div class="status-wrapper">
+                        <div class="status status-new">
+                            <form method="GET">
+                                <input type="hidden" value="1" name="AnswersSearch[id_statistic][]">
+                                <button class="btn-status">
+                                    <i class="fa fa-plus-circle"></i>
+                                    <span class="info-status">
+                                        <span>10%</span>
+                                        <span>Новый</span>
+                                    </span>
+                                </button>
+                            </form>
+                        </div>
+                        <div class="status status-expired">
+                            <form method="GET">
+                                <input type="hidden" value="2" name="AnswersSearch[id_statistic][]">
+                                <button class="btn-status">
+                                    <i class="fa fa-calendar-minus-o"></i>
+                                    <span class="info-status">
+                                        <span>22%</span>
+                                        <span>Просрочен</span>
+                                    </span>
+                                </button>
+                            </form>
+                        </div>
+                        <div class="status status-inwork">
+                            <form method="GET">
+                                <input type="hidden" value="3" name="AnswersSearch[id_statistic][]">
+                                <button class="btn-status">
+                                    <i class="fa fa-calendar"></i>
+                                    <span class="info-status">
+                                        <span>22%</span>
+                                        <span>В работе</span>
+                                    </span>
+                                </button>
+                            </form>
+                        </div>
+                        <div class="status status-revision">
+                            <form method="GET">
+                                <input type="hidden" value="4" name="AnswersSearch[id_statistic][]">
+                                <button class="btn-status">
+                                    <i class="fa fa-calendar-plus-o"></i>
+                                    <span class="info-status">
+                                        <span>10%</span>
+                                        <span>На доработке</span>
+                                    </span>
+                                </button>
+                            </form>
+                        </div>
+                        <div class="status status-archive">
+                            <form method="GET">
+                                <input type="hidden" value="5" name="AnswersSearch[id_statistic][]">
+                                <button class="btn-status">
+                                    <i class="fa fa-archive"></i>
+                                    <span class="info-status">
+                                        <span>40%</span>
+                                        <span>Архив</span>
+                                    </span>
+                                </button>
+                            </form>
+                        </div>
+                        <div class="status status-confirm">
+                            <form method="GET">
+                                <input type="hidden" value="6" name="AnswersSearch[id_statistic][]">
+                                <button class="btn-status">
+                                    <i class="fa fa-check-circle"></i>
+                                    <span class="info-status">
+                                        <span>30%</span>
+                                        <span>На подтверждение</span>
+                                    </span>
+                                </button>
+                            </form>
+                        </div>
+                        <div class="status status-address">
+                            <form method="GET">
+                                <input type="hidden" value="7" name="AnswersSearch[id_statistic][]">
+                                <button class="btn-status">
+                                    <i class="fa fa-address-book"></i>
+                                    <span class="info-status">
+                                        <span>35%</span>
+                                        <span>Переадресация</span>
+                                    </span>
+                                </button>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+                <section class="container-content">
+                    <div class="unload-container">
+                        <!--Export-->
+                        <h3>Data unload</h3>
+                        <form  method="get">
+                            <label>
+                                <div class="img-xl-wrp">
+                                    <a href="#" type="download/xlsx" class="unload-link">
+                                    </a>
+                                </div>
+                                <input type="submit" name="name" class="unload-submit" value="Выгрузка.xlsx"> 
+                            </label>
+                        </form>
+                        <!--/Export-->
+                    </div>
+                    <div id="w0" class="grid-view">
+                        <div class="summary">Showing <b>1-20</b> of <b>29</b> items.</div>
+                        <div class="table-container">
+                            <table class="table table-bordered">
+                                <thead>
+                                    <tr>
+                                        <th><a href="#?sort=id" data-sort="id">Id</a></th>
+                                        <th>ID банкомата</th>
+                                        <th><a href="#?sort=name_client" data-sort="name_client">ФИО клиента</a></th>
+                                        <th><a href="#?sort=phone" data-sort="phone">Номер телефона *</a></th>
+                                        <th><a href="#?sort=email" data-sort="email">Email *</a></th>
+                                        <th><a href="#?sort=id_city" data-sort="id_city">Город</a></th>
+                                        <th>Отзыв</th>
+                                        <th><a href="#?sort=id_answer_status" data-sort="id_answer_status">Статус</a>
+                                        </th>
+                                        <th><a href="#?sort=date_created" data-sort="date_created">Дата создания</a>
+                                        </th>
+                                    </tr>
+                                    <tr id="w0-filters" class="filters">
+                                        <td>&nbsp;</td>
+                                        <td><input type="text" class="form-control" name="AnswersSearch[id_atm]"></td>
+                                        <td><input type="text" class="form-control" name="AnswersSearch[name_client]">
+                                        </td>
+                                        <td><input type="text" class="form-control" name="AnswersSearch[phone]"></td>
+                                        <td><input type="text" class="form-control" name="AnswersSearch[email]"></td>
+                                        <td><input type="text" class="form-control" name="AnswersSearch[id_city]"></td>
+                                        <td><select class="form-control" name="AnswersSearch[review]">
+                                                <option value="108">Да</option>
+                                                <option value="107">Нет</option>
+                                                <option value="all">Выбрать всё</option>
+                                            </select></td>
+                                        <td><input type="text" class="form-control"
+                                                name="AnswersSearch[id_answer_status]"></td>
+                                        <td><input type="text" id="answerssearch-date_created" class="form-control"
+                                                name="AnswersSearch[date_created]"
+                                                data-krajee-daterangepicker="daterangepicker_dc815d7a">
+                                        </td>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr key="411" index="0" class="review-no" data-key="411">
+                                        <td><a href="#view?id_answer=411" alt="Просмотреть анкету">411</a></td>
+                                        <td>50195</td>
+                                        <td>Андрей</td>
+                                        <td>7777777777</td>
+                                        <td></td>
+                                        <td>Санкт-Петербург</td>
+                                        <td>Нет</td>
+                                        <td>
+                                            <span class="status-square status-address"></span>
+                                        </td>
+                                        <td>23-04-2020 13:57</td>
+                                    </tr>
+                                    <tr key="410" index="1" data-key="410">
+                                        <td><a href="#view?id_answer=410" alt="Просмотреть анкету">410</a></td>
+                                        <td>50195</td>
+                                        <td>Андрей</td>
+                                        <td>7777777777</td>
+                                        <td></td>
+                                        <td>Санкт-Петербург</td>
+                                        <td>Нет</td>
+                                        <td><span class="status-square status-address"></span></td>
+                                        <td>23-04-2020 13:50</td>
+                                    </tr>
+                                    <tr key="409" index="2" data-key="409">
+                                        <td><a href="#view?id_answer=409" alt="Просмотреть анкету">409</a></td>
+                                        <td>50195</td>
+                                        <td>Андрей</td>
+                                        <td>7777777777</td>
+                                        <td></td>
+                                        <td>Санкт-Петербург</td>
+                                        <td>Да</td>
+                                        <td><span class="status-square status-expired"></span></td>
+                                        <td>23-04-2020 13:48</td>
+                                    </tr>
+                                    <tr key="408" index="3" class="review-no" data-key="408">
+                                        <td><a href="#view?id_answer=408" alt="Просмотреть анкету">408</a></td>
+                                        <td>50195</td>
+                                        <td>Андрей</td>
+                                        <td>7777777777</td>
+                                        <td></td>
+                                        <td>Санкт-Петербург</td>
+                                        <td>Нет</td>
+                                        <td><span class="status-square status-address"></td>
+                                        <td>23-04-2020 13:12</td>
+                                    </tr>
+                                    <tr key="407" index="4" data-key="407">
+                                        <td><a href="#view?id_answer=407" alt="Просмотреть анкету">407</a></td>
+                                        <td>50195</td>
+                                        <td>none</td>
+                                        <td>none</td>
+                                        <td>none</td>
+                                        <td>Санкт-Петербург</td>
+                                        <td>Нет</td>
+                                        <td><span class="status-square status-address"></td>
+                                        <td>23-04-2020 13:10</td>
+                                    </tr>
+                                    <tr key="406" index="5" class="review-no" data-key="406">
+                                        <td><a href="#view?id_answer=406" alt="Просмотреть анкету">406</a></td>
+                                        <td>50195</td>
+                                        <td>Андрей</td>
+                                        <td>7777777777</td>
+                                        <td></td>
+                                        <td>Санкт-Петербург</td>
+                                        <td>Нет</td>
+                                        <td><span class="status-square status-new"></td>
+                                        <td>23-04-2020 13:06</td>
+                                    </tr>
+                                    <tr key="405" index="6" class="review-no" data-key="405">
+                                        <td><a href="#view?id_answer=405" alt="Просмотреть анкету">405</a></td>
+                                        <td>50195</td>
+                                        <td>Андрей</td>
+                                        <td>7777777777</td>
+                                        <td></td>
+                                        <td>Санкт-Петербург</td>
+                                        <td>Нет</td>
+                                        <td><span class="status-square status-inwork"></td>
+                                        <td>23-04-2020 13:02</td>
+                                    </tr>
+                                    <tr key="404" index="7" class="review-no" data-key="404">
+                                        <td><a href="#view?id_answer=404" alt="Просмотреть анкету">404</a></td>
+                                        <td>50195</td>
+                                        <td>none</td>
+                                        <td>none</td>
+                                        <td>none</td>
+                                        <td>Санкт-Петербург</td>
+                                        <td>Нет</td>
+                                        <td><span class="status-square status-address"></td>
+                                        <td>23-04-2020 12:46</td>
+                                    </tr>
+                                    <tr key="403" index="8" class="review-no" data-key="403">
+                                        <td><a href="#view?id_answer=403" alt="Просмотреть анкету">403</a></td>
+                                        <td>50195</td>
+                                        <td></td>
+                                        <td>0</td>
+                                        <td>paind12@mail.ru</td>
+                                        <td>Санкт-Петербург</td>
+                                        <td>Нет</td>
+                                        <td><span class="status-square status-archive"></td>
+                                        <td>23-04-2020 12:32</td>
+                                    </tr>
+                                    <tr key="402" index="9" class="review-no" data-key="402">
+                                        <td><a href="#view?id_answer=402" alt="Просмотреть анкету">402</a></td>
+                                        <td>50195</td>
+                                        <td>none</td>
+                                        <td>none</td>
+                                        <td>none</td>
+                                        <td>Санкт-Петербург</td>
+                                        <td>Нет</td>
+                                        <td><span class="status-square status-archive"></td>
+                                        <td>23-04-2020 12:09</td>
+                                    </tr>
+                                    <tr key="401" index="10" class="review-no" data-key="401">
+                                        <td><a href="#view?id_answer=401" alt="Просмотреть анкету">401</a></td>
+                                        <td>50195</td>
+                                        <td>345345</td>
+                                        <td>0634096511</td>
+                                        <td>dd@gmail.com</td>
+                                        <td>Санкт-Петербург</td>
+                                        <td>Нет</td>
+                                        <td><span class="status-square status-confirm"></td>
+                                        <td>23-04-2020 11:47</td>
+                                    </tr>
+                                    <tr key="399" index="11" class="review-no" data-key="399">
+                                        <td><a href="#view?id_answer=399" alt="Просмотреть анкету">399</a></td>
+                                        <td>50195</td>
+                                        <td>none</td>
+                                        <td>none</td>
+                                        <td>none</td>
+                                        <td>Санкт-Петербург</td>
+                                        <td>Нет</td>
+                                        <td><span class="status-square status-confirm"></td>
+                                        <td>23-04-2020 11:32</td>
+                                    </tr>
+                                    <tr key="397" index="12" class="review-no" data-key="397">
+                                        <td><a href="#view?id_answer=397" alt="Просмотреть анкету">397</a></td>
+                                        <td>50195</td>
+                                        <td>ntcn</td>
+                                        <td>0634096511</td>
+                                        <td>rtrt@gmail.com</td>
+                                        <td>Санкт-Петербург</td>
+                                        <td>Нет</td>
+                                        <td><span class="status-square status-expired"></td>
+                                        <td>23-04-2020 11:24</td>
+                                    </tr>
+                                    <tr key="396" index="13" class="review-no" data-key="396">
+                                        <td><a href="#view?id_answer=396" alt="Просмотреть анкету">396</a></td>
+                                        <td>50195</td>
+                                        <td>Андрей</td>
+                                        <td>7777777777</td>
+                                        <td></td>
+                                        <td>Санкт-Петербург</td>
+                                        <td>Нет</td>
+                                        <td><span class="status-square status-expired"></td>
+                                        <td>23-04-2020 11:06</td>
+                                    </tr>
+                                    <tr key="395" index="14" data-key="395">
+                                        <td><a href="#view?id_answer=395" alt="Просмотреть анкету">395</a></td>
+                                        <td>50195</td>
+                                        <td>Андрей</td>
+                                        <td>7777777777</td>
+                                        <td></td>
+                                        <td>Санкт-Петербург</td>
+                                        <td>Да</td>
+                                        <td><span class="status-square status-expired"></td>
+                                        <td>23-04-2020 11:05</td>
+                                    </tr>
+                                    <tr key="394" index="15" class="review-no" data-key="394">
+                                        <td><a href="#view?id_answer=394" alt="Просмотреть анкету">394</a></td>
+                                        <td>50195</td>
+                                        <td>Андрей</td>
+                                        <td>7777777777</td>
+                                        <td></td>
+                                        <td>Санкт-Петербург</td>
+                                        <td>Нет</td>
+                                        <td><span class="status-square status-expired"></td>
+                                        <td>23-04-2020 10:49</td>
+                                    </tr>
+                                    <tr key="393" index="16" class="review-no" data-key="393">
+                                        <td><a href="#view?id_answer=393" alt="Просмотреть анкету">393</a></td>
+                                        <td>50195</td>
+                                        <td>none</td>
+                                        <td>none</td>
+                                        <td>none</td>
+                                        <td>Санкт-Петербург</td>
+                                        <td>Нет</td>
+                                        <td><span class="status-square status-expired"></td>
+                                        <td>23-04-2020 10:30</td>
+                                    </tr>
+                                    <tr key="392" index="17" class="review-no" data-key="392">
+                                        <td><a href="#view?id_answer=392" alt="Просмотреть анкету">392</a></td>
+                                        <td>50195</td>
+                                        <td>Андрей</td>
+                                        <td>7777777777</td>
+                                        <td></td>
+                                        <td>Санкт-Петербург</td>
+                                        <td>Нет</td>
+                                        <td><span class="status-square status-expired"></td>
+                                        <td>23-04-2020 10:15</td>
+                                    </tr>
+                                    <tr key="391" index="18" data-key="391">
+                                        <td><a href="#view?id_answer=391" alt="Просмотреть анкету">391</a></td>
+                                        <td>50195</td>
+                                        <td>none</td>
+                                        <td>none</td>
+                                        <td>none</td>
+                                        <td>Санкт-Петербург</td>
+                                        <td>Да</td>
+                                        <td><span class="status-square status-expired"></td>
+                                        <td>23-04-2020 09:38</td>
+                                    </tr>
+                                    <tr key="390" index="19" class="review-no" data-key="390">
+                                        <td><a href="#view?id_answer=390" alt="Просмотреть анкету">390</a></td>
+                                        <td>50195</td>
+                                        <td>none</td>
+                                        <td>none</td>
+                                        <td>none</td>
+                                        <td>Санкт-Петербург</td>
+                                        <td>Нет</td>
+                                        <td><span class="status-square status-expired"></td>
+                                        <td>23-04-2020 09:30</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                        <ul class="pagination">
+                            <li class="prev disabled"><span>«</span></li>
+                            <li class="active"><a href="#?page=1" data-page="0">1</a></li>
+                            <li><a href="#?page=2" data-page="1">2</a></li>
+                            <li class="next"><a href="#?page=2" data-page="1">»</a></li>
+                        </ul>
+                    </div>
+                </section>
+            </section>
+        </div>
+    </div>
+    <script src="https://rbatm.ru/admin/assets/53d77a8f/jquery.js"></script>
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/momentjs/latest/moment.min.js"></script>
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/daterangepicker/daterangepicker.min.js"></script>
+    <script src="https://rbatm.ru/admin/assets/53bf7e5d/js/bootstrap.js"></script>
+    <script src="./assets/js/script.js"></script>
+    <script>
+        function dpfunc() { $('#form_send').click(); }
+    </script>
+    <script>
+        $(function () {
+            $('#answerssearch-date_created').daterangepicker({
+                opens: 'left',
+                locale: {
+                    format: 'DD-MM-YYYY',
+                    applyLabel: 'Принять',
+                    cancelLabel: 'Отмена',
+                    invalidDateLabel: 'Выберите дату',
+                    daysOfWeek: ['Вт', 'Ср', 'Чт', 'Пт', 'Сб', 'Вс', 'Пн'],
+                    monthNames: ['Январь', 'Февраль', 'Март', 'Апрель', 'Май', 'Июнь', 'Июль', 'Август', 'Сентябрь', 'Октябрь', 'Ноябрь', 'Декабрь'],
+                    firstDay: 1
+                }
+            }, function (start, end, label) {
+            });
+        });
+    </script>
+</body>
+
+</html>

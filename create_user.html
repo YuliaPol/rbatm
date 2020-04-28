@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="en-US" style="height: auto; min-height: 100%;">
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Ключевые показатели</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.css">
+    <link href="https://rbatm.ru/admin/assets/53bf7e5d/css/bootstrap.css" rel="stylesheet">
+    <link rel="stylesheet" href="./assets/css/style.css">
+</head>
+<body>
+    <div class="wrapper">
+        <header class="main-header">
+            <a class="logo" href="https://rbatm.ru/admin">
+                <span class="logo-mini"></span>
+                <span class="logo-lg"></span>
+            </a>
+            <nav class="navbar navbar-static-top" role="navigation">
+                <a href="javascript:void(0);" class="sidebar-toggle" role="button">
+                </a>
+                <div class="navbar-user-menu">
+                    <ul class="nav navbar-nav">
+                        <li class="dropdown user user-menu">
+                            <a href="https://rbatm.ru/admin/total#" class="dropdown-toggle" data-toggle="dropdown">
+                                Лихачов Дмитрий Сергеевич
+                            </a>
+                            <ul class="dropdown-menu">
+                                <li class="user-footer">
+                                    <div class="pull-right">
+                                        <a class="btn btn-default" href="https://rbatm.ru/admin/site/logout"
+                                            data-method="post">Sign out</a>
+                                    </div>
+                                </li>
+                            </ul>
+                        </li>
+                    </ul>
+                </div>
+            </nav>
+        </header>
+        <aside class="main-sidebar">
+            <section class="sidebar">
+                <ul class="sidebar-menu">
+                    <li>
+                        <a href="./total.html">
+                            <i class="fa fa-pie-chart"></i>
+                            <span>Ключевые пареметры</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="./list.html">
+                            <i class="fa fa-list"></i>
+                            <span>Анкеты</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="./locations.html">
+                            <i class="fa fa-university"></i>
+                            <span>Локации</span>
+                        </a>
+                    </li>
+                    <li class="treeview">
+                        <a href="#">
+                            <i class="fa fa-cubes"></i>
+                            <span>Шаблоны</span>
+                            <span class="pull-right-container">
+                                <i class="fa fa-angle-left pull-right"></i>
+                            </span>
+                        </a>
+                        <ul class="treeview-menu">
+                            <li><a href="./list-answer-template-text.html">
+                                    <i class="round perple"></i>
+                                    <span>Шаблоны фраз</span>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="./quiz.html">
+                                    <i class="round yellow"></i>
+                                    <span>Управление
+                                        рассылкой</span>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#">
+                                    <i class="round red"></i>
+                                    <span>Алерты
+                                    </span>
+                                </a>
+                            </li>
+                        </ul>
+                    </li>
+                    <li>
+                        <a href="./reference.html">
+                            <i class="fa fa-newspaper-o"></i>
+                            <span>Пользовательское соглашение</span>
+                        </a>
+                    </li>
+                    <li class="active">
+                        <a href="./user.html">
+                            <i class="fa fa-users"></i>
+                            <span>Пользователи</span>
+                        </a>
+                    </li>
+                </ul>
+            </section>
+        </aside>
+        <div class="content-wrapper">
+            <section class="content-header">
+                <div class="Breadcrumbs-top">
+                    <ul class="breadcrumb">
+                        <li><a href="#"><i class="fa fa-home pr-2"></i>Home</a></li>
+                        <li class="active">Добавить пользователя</li>
+                    </ul>
+                </div>
+                <h1>
+                    Добавить пользователя </h1>
+            </section>
+            <section class="content">
+                <section class="container-content">
+                    <div class="user-create">
+                        <div class="box box-info">
+                            <div class="box-footer clearfix">
+                                <form method="post">
+                                    <input type="hidden">
+                                        <div class="header-form">Основные контактные данные</div>
+                                        <div class="form-wrap">
+                                            <div class="form-element">
+                                                <label>Номер телефона</label>
+                                                <div class="box-paste-dinamyc_phone">
+                                                    <div class="input-container">
+                                                        <input type="text" name="SignupForm[phone]" class="form-control" value="">
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="form-element">
+                                                <label>Email</label>
+                                                <div class="box-paste-dinamyc_email">
+                                                    <div class="input-container">
+                                                        <input type="text" name="SignupForm[email]" class="form-control" value="">
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="form-element">
+                                                <div class="field-signupform-name required">
+                                                    <label class="control-label" for="signupform-name">ФИО:</label>
+                                                    <input type="text" id="signupform-name" class="form-control" name="SignupForm[name]"
+                                                        aria-required="true">
+                                                    <div class="help-block"></div>
+                                                </div>
+                                            </div>
+                                            <div class="form-element">
+                                                <div class="field-signupform-username">
+                                                    <label class="control-label" for="signupform-username">Логин:</label>
+                                                    <input type="text" id="signupform-username" class="form-control" name="SignupForm[username]"
+                                                        placeholder="LOGIN">
+                                                    <div class="help-block"></div>
+                                                </div>    
+                                            </div>
+                                            <div class="form-element">
+                                                <div class="field-signupform-password required">
+                                                    <label class="control-label" for="signupform-password">Пароль:</label>
+                                                    <input type="password" id="signupform-password" class="form-control"
+                                                        name="SignupForm[password]" placeholder="******" aria-required="true">
+                                                    <div class="help-block"></div>
+                                                </div>
+                                            </div>
+                                            <div class="form-element">
+                                                <div class="field-signupform-password_repeat required">
+                                                    <label class="control-label" for="signupform-password_repeat">Пароль еще раз:</label>
+                                                    <input type="password" id="signupform-password_repeat" class="form-control"
+                                                        name="SignupForm[password_repeat]" placeholder="******" aria-required="true">
+                                                    <div class="help-block"></div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="btn-container">
+                                        <button type="submit" class="btn-submit">Сохранить</button>
+                                    </div>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+            </section>
+        </div>
+    </div>
+    <script src="https://rbatm.ru/admin/assets/53d77a8f/jquery.js"></script>
+    <script src="https://rbatm.ru/admin/assets/53bf7e5d/js/bootstrap.js"></script>
+    <script src="./assets/js/script.js"></script>
+</body>
+
+</html>

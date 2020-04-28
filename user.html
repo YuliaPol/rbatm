@@ -1,0 +1,248 @@
+<!DOCTYPE html>
+<html lang="en-US" style="height: auto; min-height: 100%;">
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Ключевые показатели</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.css">
+    <link href="https://rbatm.ru/admin/assets/53bf7e5d/css/bootstrap.css" rel="stylesheet">
+    <link href="//netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap-glyphicons.css" rel="stylesheet">
+    <link rel="stylesheet" href="./assets/css/style.css">
+</head>
+
+<body>
+    <div class="wrapper">
+        <header class="main-header">
+            <a class="logo" href="https://rbatm.ru/admin">
+                <span class="logo-mini"></span>
+                <span class="logo-lg"></span>
+            </a>
+            <nav class="navbar navbar-static-top" role="navigation">
+                <a href="javascript:void(0);" class="sidebar-toggle" role="button">
+                </a>
+                <div class="navbar-user-menu">
+                    <ul class="nav navbar-nav">
+                        <li class="dropdown user user-menu">
+                            <a href="https://rbatm.ru/admin/total#" class="dropdown-toggle" data-toggle="dropdown">
+                                Лихачов Дмитрий Сергеевич
+                            </a>
+                            <ul class="dropdown-menu">
+                                <li class="user-footer">
+                                    <div class="pull-right">
+                                        <a class="btn btn-default" href="https://rbatm.ru/admin/site/logout"
+                                            data-method="post">Sign out</a>
+                                    </div>
+                                </li>
+                            </ul>
+                        </li>
+                    </ul>
+                </div>
+            </nav>
+        </header>
+        <aside class="main-sidebar">
+            <section class="sidebar">
+                <ul class="sidebar-menu">
+                    <li>
+                        <a href="./total.html">
+                            <i class="fa fa-pie-chart"></i>
+                            <span>Ключевые пареметры</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="./list.html">
+                            <i class="fa fa-list"></i>
+                            <span>Анкеты</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="./locations.html">
+                            <i class="fa fa-university"></i>
+                            <span>Локации</span>
+                        </a>
+                    </li>
+                    <li class="treeview">
+                        <a href="#">
+                            <i class="fa fa-cubes"></i>
+                            <span>Шаблоны</span>
+                            <span class="pull-right-container">
+                                <i class="fa fa-angle-left pull-right"></i>
+                            </span>
+                        </a>
+                        <ul class="treeview-menu">
+                            <li><a href="./list-answer-template-text.html">
+                                    <i class="round perple"></i>
+                                    <span>Шаблоны фраз</span>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="./quiz.html">
+                                    <i class="round yellow"></i>
+                                    <span>Управление
+                                        рассылкой</span>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#">
+                                    <i class="round red"></i>
+                                    <span>Алерты
+                                    </span>
+                                </a>
+                            </li>
+                        </ul>
+                    </li>
+                    <li>
+                        <a href="./reference.html">
+                            <i class="fa fa-newspaper-o"></i>
+                            <span>Пользовательское соглашение</span>
+                        </a>
+                    </li>
+                    <li class="active">
+                        <a href="./user.html">
+                            <i class="fa fa-users"></i>
+                            <span>Пользователи</span>
+                        </a>
+                    </li>
+                </ul>
+            </section>
+        </aside>
+        <div class="content-wrapper">
+            <section class="content-header">
+                <div class="Breadcrumbs-top">
+                    <ul class="breadcrumb">
+                        <li><a href="#"><i class="fa fa-home pr-2"></i>Home</a></li>
+                        <li class="active">Список пользователей</li>
+                    </ul>
+                </div>
+                <h1>
+                    Список пользователей </h1>
+            </section>
+            <section class="content">
+                <div class="box-header">
+                    <div class="links-wrap">
+                        <div class="link-wraper">
+                            <a href="./create_user.html">Добавить пользователей</a>
+                        </div>
+                    </div>
+                </div>
+                <section class="container-content">
+                    <div class="unload-container">
+                        <!--Export-->
+                        <h3>Data unload</h3>
+                        <form  method="get">
+                            <label>
+                                <div class="img-xl-wrp">
+                                    <a href="#" type="download/xlsx" class="unload-link">
+                                    </a>
+                                </div>
+                                <input type="submit" name="name" class="unload-submit" value="Выгрузка.xlsx"> 
+                            </label>
+                        </form>
+                        <!--/Export-->
+                    </div>
+                    <div id="w0" class="grid-view">
+                        <div class="table-container">
+                            <table class="table table-bordered">
+                                <thead>
+                                    <tr>
+                                        <th><a href="#" data-sort="name">Name</a></th>
+                                        <th><a href="#" data-sort="email">email</a></th>
+                                        <th><a href="#" data-sort="phone">Phone</a></th>
+                                        <th>Роль</th>
+                                        <th>Управление</th>
+                                    </tr>
+                                    <tr id="w0-filters" class="filters">
+                                        <td> </td>
+                                        <td><input type="text" class="form-control" name="UserSearch[email]"></td>
+                                        <td> </td>
+                                        <td> </td>
+                                        <td> </td>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr data-key="11">
+                                        <td>Менеджер 1</td>
+                                        <td>maksim.bogdanov@rosbank.ru</td>
+                                        <td>0000000000</td>
+                                        <td>Отсутствует</td>
+                                        <td>
+                                            <a href="./create_user.html" class="btn btn-success glyphicon glyphicon-pencil"></a>
+                                            <a href="#" class="btn btn-danger glyphicon glyphicon-remove"
+                                                onclick="return confirm('Вы действительно хотите удалить пользователя?')" ;=""></a>
+                                            <a href="./setting_user.html" class="btn btn-info glyphicon glyphicon-cog"></a>
+                                        </td>
+                                    </tr>
+                                    <tr data-key="10">
+                                        <td>Валидатор</td>
+                                        <td>k.fesenko@4service-group.com</td>
+                                        <td>000000000</td>
+                                        <td>Валидатор</td>
+                                        <td>
+                                            <a href="./create_user.html" class="btn btn-success glyphicon glyphicon-pencil"></a>
+                                            <a href="#" class="btn btn-danger glyphicon glyphicon-remove"
+                                                onclick="return confirm('Вы действительно хотите удалить пользователя?')" ;=""></a>
+                                            <a href="./setting_user.html" class="btn btn-info glyphicon glyphicon-cog"></a>
+                                        </td>
+                                    </tr>
+                                    <tr data-key="9">
+                                        <td>Валидатор2</td>
+                                        <td>backend.dev.dl@gmail.com</td>
+                                        <td>3424234</td>
+                                        <td>Валидатор</td>
+                                        <td>
+                                            <a href="./create_user.html" class="btn btn-success glyphicon glyphicon-pencil"></a>
+                                            <a href="#" class="btn btn-danger glyphicon glyphicon-remove"
+                                                onclick="return confirm('Вы действительно хотите удалить пользователя?')" ;=""></a>
+                                            <a href="./setting_user.html" class="btn btn-info glyphicon glyphicon-cog"></a>
+                                        </td>
+                                    </tr>
+                                    <tr data-key="8">
+                                        <td>Менеджер</td>
+                                        <td>andrii.khimich.ua@gmail.com</td>
+                                        <td>0000000000</td>
+                                        <td>Менеджер</td>
+                                        <td>
+                                            <a href="./create_user.html" class="btn btn-success glyphicon glyphicon-pencil"></a>
+                                            <a href="#" class="btn btn-danger glyphicon glyphicon-remove"
+                                                onclick="return confirm('Вы действительно хотите удалить пользователя?')" ;=""></a>
+                                            <a href="./setting_user.html" class="btn btn-info glyphicon glyphicon-cog"></a>
+                                        </td>
+                                    </tr>
+                                    <tr data-key="5">
+                                        <td>Валидатор</td>
+                                        <td>alchemistiqueua@gmail.com</td>
+                                        <td>0000000000</td>
+                                        <td>Валидатор</td>
+                                        <td>
+                                            <a href="./create_user.html" class="btn btn-success glyphicon glyphicon-pencil"></a>
+                                            <a href="#" class="btn btn-danger glyphicon glyphicon-remove"
+                                                onclick="return confirm('Вы действительно хотите удалить пользователя?')" ;=""></a>
+                                            <a href="./setting_user.html" class="btn btn-info glyphicon glyphicon-cog"></a>
+                                        </td>
+                                    </tr>
+                                    <tr data-key="1">
+                                        <td>Лихачов Дмитрий Сергеевич</td>
+                                        <td>paind12@mail.ru</td>
+                                        <td>0634096522</td>
+                                        <td>Менеджер,Администратор,Валидатор</td>
+                                        <td>
+                                            <a href="./create_user.html" class="btn btn-success glyphicon glyphicon-pencil"></a>
+                                            <a href="#" class="btn btn-danger glyphicon glyphicon-remove"
+                                                onclick="return confirm('Вы действительно хотите удалить пользователя?')" ;=""></a>
+                                            <a href="./setting_user.html" class="btn btn-info glyphicon glyphicon-cog"></a>
+                                        </td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </section>
+            </section>
+        </div>
+    </div>
+    <script src="https://rbatm.ru/admin/assets/53d77a8f/jquery.js"></script>
+    <script src="https://rbatm.ru/admin/assets/53bf7e5d/js/bootstrap.js"></script>
+    <script src="./assets/js/script.js"></script>
+</body>
+
+</html>

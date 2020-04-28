@@ -1,0 +1,278 @@
+<!DOCTYPE html>
+<html lang="en-US" style="height: auto; min-height: 100%;">
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Ключевые показатели</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.css">
+    <link href="https://rbatm.ru/admin/assets/53bf7e5d/css/bootstrap.css" rel="stylesheet">
+    <link rel="stylesheet" href="./assets/css/style.css">
+
+
+</head>
+
+<body>
+    <div class="wrapper">
+        <header class="main-header">
+            <a class="logo" href="https://rbatm.ru/admin">
+                <span class="logo-mini"></span>
+                <span class="logo-lg"></span>
+            </a>
+            <nav class="navbar navbar-static-top" role="navigation">
+                <a href="javascript:void(0);" class="sidebar-toggle" role="button">
+                </a>
+                <div class="navbar-user-menu">
+                    <ul class="nav navbar-nav">
+                        <li class="dropdown user user-menu">
+                            <a href="https://rbatm.ru/admin/total#" class="dropdown-toggle" data-toggle="dropdown">
+                                Лихачов Дмитрий Сергеевич
+                            </a>
+                            <ul class="dropdown-menu">
+                                <li class="user-footer">
+                                    <div class="pull-right">
+                                        <a class="btn btn-default" href="https://rbatm.ru/admin/site/logout"
+                                            data-method="post">Sign out</a>
+                                    </div>
+                                </li>
+                            </ul>
+                        </li>
+                    </ul>
+                </div>
+            </nav>
+        </header>
+        <aside class="main-sidebar">
+            <section class="sidebar">
+                <ul class="sidebar-menu">
+                    <li>
+                        <a href="./total.html">
+                            <i class="fa fa-pie-chart"></i>
+                            <span>Ключевые пареметры</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="./list.html">
+                            <i class="fa fa-list"></i>
+                            <span>Анкеты</span>
+                        </a>
+                    </li>
+                    <li class="active">
+                        <a href="./locations.html">
+                            <i class="fa fa-university"></i>
+                            <span>Локации</span>
+                        </a>
+                    </li>
+                    <li class="treeview">
+                        <a href="#">
+                            <i class="fa fa-cubes"></i>
+                            <span>Шаблоны</span>
+                            <span class="pull-right-container">
+                                <i class="fa fa-angle-left pull-right"></i>
+                            </span>
+                        </a>
+                        <ul class="treeview-menu">
+                            <li><a href="./list-answer-template-text.html">
+                                    <i class="round perple"></i>
+                                    <span>Шаблоны фраз</span>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="./quiz.html">
+                                    <i class="round yellow"></i>
+                                    <span>Управление
+                                        рассылкой</span>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#">
+                                    <i class="round red"></i>
+                                    <span>Алерты
+                                    </span>
+                                </a>
+                            </li>
+                        </ul>
+                    </li>
+                    <li>
+                        <a href="./reference.html">
+                            <i class="fa fa-newspaper-o"></i>
+                            <span>Пользовательское соглашение</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="./user.html">
+                            <i class="fa fa-users"></i>
+                            <span>Пользователи</span>
+                        </a>
+                    </li>
+                </ul>
+            </section>
+        </aside>
+        <div class="content-wrapper">
+            <section class="content-header">
+                <div class="Breadcrumbs-top">
+                    <ul class="breadcrumb">
+                        <li><a href="#"><i class="fa fa-home pr-2"></i>Home</a></li>
+                        <li><a href="./list-cities.html">Список городов</a></li>
+                        <li><a href="./locations.html">Список локаций</a></li>
+                        <li><a href="./list-region.html">Список регионов</a></li>
+                        <li class="active">Редактирование: Город Санкт-Петербург Проспект Искровский Дом 29, кор. 2, лит.А</li>
+                    </ul>
+                </div>
+                <h1>
+                    Редактирование: Город Санкт-Петербург Проспект Искровский Дом 29, кор. 2, лит.А</h1>
+            </section>
+            <section class="content">
+
+                <section class="container-content">
+                    <div class="update">
+                        <div class="box box-info">
+                            <div class="box-footer clearfix">
+                                <form action="#" method="post">
+                                    <input type="hidden">
+                                    <div class="row">
+                                        <div class="col-md-12">
+                                            <div class="col-md-6">
+                                                <div class="form-group field-locations-id_region">
+                                                    <label class="control-label" for="locations-id_region">Регион</label>
+                                                    <select id="locations-id_region" class="form-control" name="Locations[id_region]">
+                                                        <option value="1" selected="">Центр</option>
+                                                        <option value="2">Восток</option>
+                                                        <option value="3">Запад</option>
+                                                    </select>
+                                                    <div class="help-block"></div>
+                                                </div>
+                                            </div>
+                                            <div class="col-md-6">
+                                                <div class="form-group field-locations-id_city">
+                                                    <label class="control-label" for="locations-id_city">Город</label>
+                                                    <select id="locations-id_city" class="form-control" name="Locations[id_city]">
+                                                        <option value="702" selected="">Санкт-Петербург</option>
+                                                        <option value="703">Стрельна</option>
+                                                        <option value="704">Пушкин</option>
+                                                        <option value="705">Всеволожск</option>
+                                                        <option value="706">Гатчина</option>
+                                                        <option value="707">Кудрово</option>
+                                                        <option value="708">Парголово</option>
+                                                        <option value="709">Сестрорецк</option>
+                                                        <option value="710">Луга</option>
+                                                        <option value="711">Северная часть Горелово</option>
+                                                        <option value="712">Левашово</option>
+                                                        <option value="713">Шушары</option>
+                                                    </select>
+                                                    <div class="help-block"></div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-12">
+                                            <div class="col-md-6">
+                                                <div class="form-group field-locations-name required">
+                                                    <label class="control-label" for="locations-name">Название локации</label>
+                                                    <input type="text" id="locations-name" class="form-control" name="Locations[name]"
+                                                        value="Город Санкт-Петербург Проспект Искровский Дом 29, кор. 2, лит.А"
+                                                        aria-required="true">
+                                                    <div class="help-block"></div>
+                                                </div>
+                                            </div>
+                                            <div class="col-md-3">
+                                                <div class="form-group field-locations-id_atm">
+                                                    <label class="control-label" for="locations-id_atm">Код</label>
+                                                    <input type="text" id="locations-id_atm" class="form-control" name="Locations[id_atm]"
+                                                        value="50195">
+                                                    <div class="help-block"></div>
+                                                </div>
+                                            </div>
+                                            <div class="col-md-3">
+                                                <div class="form-group field-locations-postcode">
+                                                    <label class="control-label" for="locations-postcode">Почтовый индекс</label>
+                                                    <input type="text" id="locations-postcode" class="form-control"
+                                                        name="Locations[postcode]" value="193230">
+                                                    <div class="help-block"></div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-12">
+                                            <div class="col-md-3">
+                                                <div class="form-group field-locations-schedule">
+                                                    <label class="control-label" for="locations-schedule">График</label>
+                                                    <input type="text" id="locations-schedule" class="form-control"
+                                                        name="Locations[schedule]" value="Пн-Пт:09:00-20:00, Cб:10:00-17:00">
+                                                    <div class="help-block"></div>
+                                                </div>
+                                            </div>
+                                            <div class="col-md-3">
+                                                <div class="form-group field-locations-type_device">
+                                                    <label class="control-label" for="locations-type_device">Тип устройства</label>
+                                                    <input type="text" id="locations-type_device" class="form-control"
+                                                        name="Locations[type_device]" value="Банкомат">
+                                                    <div class="help-block"></div>
+                                                </div>
+                                            </div>
+                                            <div class="col-md-6">
+                                                <div class="form-group field-locations-branch">
+                                                    <label class="control-label" for="locations-branch">Филиал</label>
+                                                    <input type="text" id="locations-branch" class="form-control" name="Locations[branch]"
+                                                        value="Северо-Западный">
+                    
+                                                    <div class="help-block"></div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-12">
+                                            <div class="col-md-5">
+                                                <div class="form-group field-locations-function_device">
+                                                    <label class="control-label" for="locations-function_device">Функционал
+                                                        устройства</label>
+                                                    <input type="text" id="locations-function_device" class="form-control"
+                                                        name="Locations[function_device]" value="Cash-IN + Cash-OUT">
+                                                    <div class="help-block"></div>
+                                                </div>
+                                            </div>
+                                            <div class="col-md-5">
+                                                <div class="form-group field-locations-installation_location">
+                                                    <label class="control-label" for="locations-installation_location">Место
+                                                        установки</label>
+                                                    <input type="text" id="locations-installation_location" class="form-control"
+                                                        name="Locations[installation_location]" value="ДО Правобережный">
+                                                    <div class="help-block"></div>
+                                                </div>
+                                            </div>
+                                            <div class="col-md-2">
+                                                <div class="form-group field-locations-at_branch">
+                                                    <label class="control-label" for="locations-at_branch">При отделении</label>
+                                                    <select id="locations-at_branch" class="form-control" name="Locations[at_branch]">
+                                                        <option value="Да" selected="">Да</option>
+                                                        <option value="Нет">Нет</option>
+                                                    </select>
+                                                    <div class="help-block"></div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-12">
+                                            <div class="col-md-4">
+                                                <div class="form-group field-locations-active">
+                                                    <input type="hidden" name="Locations[active]" value="0"><label><input type="checkbox"
+                                                            id="locations-active" name="Locations[active]" value="1" checked="">
+                                                        Активность</label>
+                                                    <div class="help-block"></div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-12">
+                                            <div class="col-md-4">
+                                                <button type="submit">Сохранить</button> </div>
+                                        </div>
+                                    </div>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+            </section>
+        </div>
+    </div>
+    <script src="https://rbatm.ru/admin/assets/53d77a8f/jquery.js"></script>
+    <script src="https://rbatm.ru/admin/assets/53bf7e5d/js/bootstrap.js"></script>
+    <script src="./assets/js/script.js"></script>
+</body>
+
+</html>

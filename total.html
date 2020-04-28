@@ -1,0 +1,454 @@
+<!DOCTYPE html>
+<html lang="en-US" style="height: auto; min-height: 100%;">
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Ключевые показатели</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.css">
+    <link href="https://rbatm.ru/admin/assets/53bf7e5d/css/bootstrap.css" rel="stylesheet">
+    <link rel="stylesheet" href="./assets/css/style.css">
+</head>
+
+<body>
+    <div class="wrapper">
+        <header class="main-header">
+            <a class="logo" href="https://rbatm.ru/admin">
+                <span class="logo-mini"></span>
+                <span class="logo-lg"></span>
+            </a>
+            <nav class="navbar navbar-static-top" role="navigation">
+                <a href="javascript:void(0);" class="sidebar-toggle" role="button">
+                </a>
+                <div class="navbar-user-menu">
+                    <ul class="nav navbar-nav">
+                        <li class="dropdown user user-menu">
+                            <a href="https://rbatm.ru/admin/total#" class="dropdown-toggle" data-toggle="dropdown">
+                                Лихачов Дмитрий Сергеевич
+                            </a>
+                            <ul class="dropdown-menu">
+                                <li class="user-footer">
+                                    <div class="pull-right">
+                                        <a class="btn btn-default" href="https://rbatm.ru/admin/site/logout"
+                                            data-method="post">Sign out</a>
+                                        </div>
+                                </li>
+                            </ul>
+                        </li>
+                    </ul>
+                </div>
+            </nav>
+        </header>
+        <aside class="main-sidebar">
+            <section class="sidebar">
+                <ul class="sidebar-menu">
+                    <li class="active">
+                        <a href="./total.html">
+                            <i class="fa fa-pie-chart"></i>
+                            <span>Ключевые пареметры</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="./list.html">
+                            <i class="fa fa-list"></i>
+                            <span>Анкеты</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="./locations.html">
+                            <i class="fa fa-university"></i>
+                            <span>Локации</span>
+                        </a>
+                    </li>
+                    <li class="treeview">
+                        <a href="#">
+                            <i class="fa fa-cubes"></i>
+                            <span>Шаблоны</span>
+                            <span class="pull-right-container">
+                                <i class="fa fa-angle-left pull-right"></i>
+                            </span>
+                        </a>
+                        <ul class="treeview-menu">
+                            <li><a href="./list-answer-template-text.html">
+                                <i class="round perple"></i>
+                                    <span>Шаблоны фраз</span>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="./quiz.html">
+                                <i class="round yellow"></i>
+                                    <span>Управление
+                                        рассылкой</span>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#">
+                                    <i class="round red"></i>
+                                    <span>Алерты
+                                    </span>
+                                </a>
+                            </li>
+                        </ul>
+                    </li>
+                    <li>
+                        <a href="./reference.html">
+                            <i class="fa fa-newspaper-o"></i>
+                            <span>Пользовательское соглашение</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="./user.html">
+                            <i class="fa fa-users"></i>
+                            <span>Пользователи</span>
+                        </a>
+                    </li>
+                </ul>
+            </section>
+        </aside>
+        <div class="content-wrapper">
+            <section class="content-header">
+                <div class="Breadcrumbs-top">
+                    <ul class="breadcrumb">
+                        <li><a href="#"><i class="fa fa-home pr-2"></i>Home</a></li>
+                        <li class="active">Ключевые показатели</li>
+                    </ul>
+                </div>
+                <h1>
+                    Ключевые показатели </h1>
+            </section>
+            <section class="content">
+                    <div class="box-header">
+                        <form method="get" id="filter-form">
+                            <div class="box-wrap">
+                                <div class="box">
+                                    <h6>Регион</h6>
+                                    <select class="form-control input-sm" name="AnswersSearch[region]" onchange="dpfunc()">
+                                        <option value="all">Все</option>
+                                        <optgroup label="Макрорегионы">
+                                            <option value="Центр">Центр</option>
+                                            <option value="Восток">Восток</option>
+                                            <option value="Запад">Запад</option>
+                                        </optgroup>
+                                    </select>
+                                </div>
+                                <div class="box">
+                                    <h6>Город</h6>
+                                    <select class="form-control input-sm" name="AnswersSearch[city]" onchange="dpfunc()">
+                                        <option value="all">Все</option>
+                                        <optgroup label="Макрорегионы">
+                                            <option value="Всеволожск">Всеволожск</option>
+                                            <option value="Гатчина">Гатчина</option>
+                                            <option value="Кудрово">Кудрово</option>
+                                            <option value="Левашово">Левашово</option>
+                                            <option value="Луга">Луга</option>
+                                            <option value="Парголово">Парголово</option>
+                                            <option value="Пушкин">Пушкин</option>
+                                            <option value="Санкт-Петербург">Санкт-Петербург</option>
+                                            <option value="Северная часть Горелово">Северная часть Горелово</option>
+                                            <option value="Сестрорецк">Сестрорецк</option>
+                                            <option value="Стрельна">Стрельна</option>
+                                            <option value="Шушары">Шушары</option>
+                                        </optgroup>
+                                    </select>
+                                </div>
+                                <div class="box">
+                                    <h6>Локация</h6>
+                                    <select class="form-control input-sm" name="AnswersSearch[location]" onchange="dpfunc()">
+                                        <option value="all">Локация</option>
+                                        <optgroup label="Макрорегионы">
+                                            <option value="Город Санкт-Петербург Проспект Искровский Дом 29, кор. 2, лит.А">Город
+                                                Санкт-Петербург Проспект Искровский Дом 29, кор. 2, лит.А</option>
+                                            <option value="Город Санкт-Петербург Проспект Малый ВО Дом 22, лит. А">Город Санкт-Петербург
+                                                Проспект Малый ВО Дом 22, лит. А</option>
+                                            <option
+                                                value="Город
+                                                                                            Санкт-Петербург Проспект Чернышевского Дом 17А ">
+                                                Город
+                                                Санкт-Петербург Проспект Чернышевского Дом 17А </option>
+                                            <option value="Город
+                                                                                            Санкт-Петербург Проспект Культуры Дом 41">Город
+                                                Санкт-Петербург Проспект Культуры Дом 41</option>
+                                            <option value="Город Санкт-Петербург Проспект Искровский Дом 29, кор. 2, лит.А">Город
+                                                Санкт-Петербург Проспект Искровский Дом 29, кор. 2, лит.А</option>
+                                            <option value=" Санкт-Петербург Улица Ефимова Дом 2"> Санкт-Петербург Улица Ефимова Дом 2
+                                            </option>
+                                            <option value="Город Санкт-Петербург Поселок Стрельна Улица Связи Дом 34, лит. А">Город
+                                                Санкт-Петербург Поселок Стрельна Улица Связи Дом 34, лит. А</option>
+                                            <option value="Город Санкт-Петербург Город Пушкин Улица Московская Дом 25А">Город
+                                                Санкт-Петербург
+                                                Город Пушкин Улица Московская Дом 25Аг</option>
+                                            <option value="Санкт-Петербург Шоссе Петергофское Дом 98 ">Санкт-Петербург Шоссе Петергофское
+                                                Дом 98
+                                            </option>
+                                            <option value="Санкт-Петербург Проспект Большевиков Дом 27 А">Санкт-Петербург Проспект
+                                                Большевиков
+                                                Дом 27 А</option>
+                                            <option value="Область Ленинградская Район Всеволожский Город Всеволожск Шоссе Дорога
+                                                                                            Жизни 7-й км">Область Ленинградская Район
+                                                Всеволожский Город Всеволожск
+                                                Шоссе Дорога
+                                                Жизни 7-й км</option>
+                                            <option value="Город
+                                                                                            Санкт-Петербург Улица Ярослава Гашека Дом 5">
+                                                Город
+                                                Санкт-Петербург Улица Ярослава Гашека Дом 5</option>
+                                            <option value="Город Санкт-Петербург Улица Московская Б. Дом 8/2, лит. А ">Город Санкт-Петербург
+                                                Улица Московская Б. Дом 8/2, лит. А </option>
+                                            <option value="Город
+                                                                                            Санкт-Петербург Бульвар Новаторов Дом 11а">
+                                                Город
+                                                Санкт-Петербург Бульвар Новаторов Дом 11а</option>
+                                            <option value="Город Санкт-Петербург Улица Советская 2-я Дом 17, лит. А">Город Санкт-Петербург
+                                                Улица
+                                                Советская 2-я Дом 17, лит. А</option>
+                                            <option value="Город Санкт-Петербург Проспект Науки Дом 17, корп. 1, лит. А">Город
+                                                Санкт-Петербург
+                                                Проспект Науки Дом 17, корп. 1, лит. А</option>
+                                            <option value="Город Санкт-Петербург Проспект Дальневосточный Дом 16, корп.1, литер А">Город
+                                                Санкт-Петербург Проспект Дальневосточный Дом 16, корп.1, литер А</option>
+                                            <option value="Город
+                                                                                            Санкт-Петербург Площадь Балканская Дом 5">Город
+                                                Санкт-Петербург Площадь Балканская Дом 5</option>
+                                            <option value="Город
+                                                                                            Санкт-Петербург Улица Савушкина Дом 141 А ">
+                                                Город
+                                                Санкт-Петербург Улица Савушкина Дом 141 А </option>
+                                            <option value="Город
+                                                                                            Санкт-Петербург Улица Боровая Дом 47 ">Город
+                                                Санкт-Петербург Улица Боровая Дом 47 </option>
+                                            <option value="Город Санкт-Петербург Улица Партизана Германа Дом 2, лит. А">Город
+                                                Санкт-Петербург
+                                                Улица Партизана Германа Дом 2, лит. А</option>
+                                            <option value="Город Санкт-Петербург Улица Большая Посадская Дом 12, лит. О">Город
+                                                Санкт-Петербург
+                                                Улица Большая Посадская Дом 12, лит. О</option>
+                                            <option value="Область Ленинградская Район Гатчинский Город Гатчина Шоссе Ленинградское
+                                                                                            Дом 12">Область Ленинградская Район Гатчинский
+                                                Город Гатчина Шоссе
+                                                Ленинградское
+                                                Дом 12</option>
+                                            <option value="Город Санкт-Петербург Улица Ярослава Гашека Дом 5, Н-6">Город Санкт-Петербург
+                                                Улица
+                                                Ярослава Гашека Дом 5, Н-6</option>
+                                            <option
+                                                value="Город
+                                                                                            Санкт-Петербург Проспект Индустриальный Дом 25">
+                                                Город
+                                                Санкт-Петербург Проспект Индустриальный Дом 25</option>
+                                            <option value="Город Санкт-Петербург Проспект Московский Дом 171, лит. А ">Город Санкт-Петербург
+                                                Проспект Московский Дом 171, лит. А </option>
+                                            <option value="Город
+                                                                                            Санкт-Петербург Улица Бухарестская Дом 69-А">
+                                                Город
+                                                Санкт-Петербург Улица Бухарестская Дом 69-А</option>
+                                            <option value="Город
+                                                                                            Санкт-Петербург Шоссе Петергофское Дом 51А">
+                                                Город
+                                                Санкт-Петербург Шоссе Петергофское Дом 51А</option>
+                                            <option value="Город
+                                                                                            Санкт-Петербург Улица Хасанская Дом 17">Город
+                                                Санкт-Петербург Улица Хасанская Дом 17</option>
+                                            <option value="Город
+                                                                                            Санкт-Петербург Улица Седова Дом 11 лит. А">
+                                                Город
+                                                Санкт-Петербург Улица Седова Дом 11 лит. А</option>
+                                            <option value="Город
+                                                                                            Санкт-Петербург Шоссе Революции Дом 41/39">
+                                                Город
+                                                Санкт-Петербург Шоссе Революции Дом 41/39</option>
+                                        </optgroup>
+                                    </select>
+                                </div>
+                            </div>
+                            <button type="submit" id="form_send" class="btn-hide">Отправить</button>
+                        </form>
+                    </div>
+                <section class="container-content">
+                    <div class="chart-wrapper">
+                        <div class="chart-container">
+                            <div class="index-csi-chart-persent">
+                                <h3>Индекс CSI</h3>
+                                <div class="box flex-box-csi-chart">
+                                    <div class="canvas-box">
+                                        <div style="position: relative; height:100%; width:100%">
+                                            <canvas id="index-csi-chart-persent-canvas"></canvas>
+                                        </div>
+                                    </div>
+                                    <div id="legend1"></div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="chart-container">
+                            <div class="alert-statistic">
+                                <h3>Alert Statistics</h3>
+                                <div class="box">
+                                    <div style="position: relative; height:100%; width:100%">
+                                        <canvas id="alert-statistic-chart-canvas"></canvas>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="table-wrapper">
+                        <div class="table-container">
+                        <div class="table-reason table-yes">
+                            <div class="header-table">Причины удовлетворенности (ответ "Да")</div>
+                            <table class="table">
+                                <thead>
+                                    <tr>
+                                        <th>Название вопроса</th>
+                                        <th>(4) шт</th>
+                                        <th>(100) %</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td>Расположение</td>
+                                        <td><span>3</span></td>
+                                        <td>
+                                            <span>75</span>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>Удобное меню / Сервисы</td>
+                                        <td><span>1</span></td>
+                                        <td>
+                                            <span>25</span>
+                                        </td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                        </div>
+                        <div class="table-container">
+                        <div class="table-reason table-no">
+                            <div class="header-table">Причины неудовлетворенности (ответ "Нет")</div>
+                            <table class="table">
+                                <thead>
+                                    <tr>
+                                        <th>Название вопроса</th>
+                                        <th>(15) шт</th>
+                                        <th>(100) %</th>
+                                    </tr>
+                                </th>
+                                <tbody>
+                                    <tr>
+                                        <td>Количество банкоматов</td>
+                                        <td><span>13</span></td>
+                                        <td>
+                                            <span>87</span>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>Скорость работы</td>
+                                        <td><span>1</span></td>
+                                        <td>
+                                            <span>7</span>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>Техническое исправность</td>
+                                        <td><span>1</span></td>
+                                        <td>
+                                            <span>7</span>
+                                        </td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                        </div>
+                    </div>
+                </section>
+            </section>
+        </div>
+
+
+    </div>
+    <script src="https://rbatm.ru/admin/assets/53d77a8f/jquery.js"></script>
+    <script src="https://rbatm.ru/admin/assets/53bf7e5d/js/bootstrap.js"></script>
+    <script src="./assets/js/Chart.js"></script>
+    <script src="./assets/js/script.js"></script>
+    <script src="./assets/js/script_chart.js"></script>
+
+    <script>
+        function dpfunc() { $('#form_send').click(); }
+    </script>
+    
+    <!--  your parms for charts and date picker start  -->
+    <script>
+        // doughnut chart
+        var CsiChartDataYes = 82;
+        var CsiChartDataNot = 40;
+        if(CsiChartDataYes>CsiChartDataNot){
+            var centerDonutTxt = "Да";
+        }
+        else {
+            var centerDonutTxt = "Нет";
+        }
+        var indexCsiChartData = {
+            labels: [
+                "Положительно",
+                "Отрицательно",
+            ],
+            datasets: [
+                {
+                    data: [
+                        CsiChartDataYes,
+                        CsiChartDataNot
+                    ],
+                    backgroundColor: ["#30cc7c","#e8594a"],
+                    hoverBackgroundColor : ['#00c659', '#e03427'],
+
+                }],
+            centerText: centerDonutTxt,
+            round: true
+        };
+
+        // alert chart data
+        var alertStatisticChartData = {
+            labels: [
+                "Новый",
+                "Просрочен",
+                "В работе",
+                "На доработке",
+                "Архив",
+                "На потдверждение",
+                "Переадресация"
+            ],
+            datasets: [{
+                label: '',
+                data: [
+                    3,
+                    2,
+                    4,
+                    7,
+                    6,
+                    5,
+                    8
+                ],
+                backgroundColor: [
+                    'rgba(255, 99, 132, 0.2)',
+                    'rgba(54, 162, 235, 0.2)',
+                    'rgba(255, 206, 86, 0.2)',
+                    'rgba(75, 192, 192, 0.2)',
+                    'rgba(153, 102, 255, 0.2)',
+                    'rgba(255, 159, 64, 0.2)',
+                    'rgba(25, 25, 100, 0.2)'
+                ],
+                borderColor: [
+                    'rgba(255,99,132,1)',
+                    'rgba(54, 162, 235, 1)',
+                    'rgba(255, 206, 86, 1)',
+                    'rgba(75, 192, 192, 1)',
+                    'rgba(153, 102, 255, 1)',
+                    'rgba(255, 159, 64, 1)',
+                    'rgba(25, 25, 100, 1)'
+                ],
+                borderWidth: 1
+            }]
+        };
+    </script>
+    <!--  your parms for charts and date picker end    -->
+</body>
+
+</html>

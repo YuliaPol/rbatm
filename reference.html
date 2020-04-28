@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="en-US" style="height: auto; min-height: 100%;">
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Ключевые показатели</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.css">
+    <link href="https://rbatm.ru/admin/assets/53bf7e5d/css/bootstrap.css" rel="stylesheet">
+    <link href="//netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap-glyphicons.css" rel="stylesheet">
+    <link rel="stylesheet" href="./assets/css/style.css">
+</head>
+
+<body>
+    <div class="wrapper">
+        <header class="main-header">
+            <a class="logo" href="https://rbatm.ru/admin">
+                <span class="logo-mini"></span>
+                <span class="logo-lg"></span>
+            </a>
+            <nav class="navbar navbar-static-top" role="navigation">
+                <a href="javascript:void(0);" class="sidebar-toggle" role="button">
+                </a>
+                <div class="navbar-user-menu">
+                    <ul class="nav navbar-nav">
+                        <li class="dropdown user user-menu">
+                            <a href="https://rbatm.ru/admin/total#" class="dropdown-toggle" data-toggle="dropdown">
+                                Лихачов Дмитрий Сергеевич
+                            </a>
+                            <ul class="dropdown-menu">
+                                <li class="user-footer">
+                                    <div class="pull-right">
+                                        <a class="btn btn-default" href="https://rbatm.ru/admin/site/logout"
+                                            data-method="post">Sign out</a>
+                                    </div>
+                                </li>
+                            </ul>
+                        </li>
+                    </ul>
+                </div>
+            </nav>
+        </header>
+        <aside class="main-sidebar">
+            <section class="sidebar">
+                <ul class="sidebar-menu">
+                    <li>
+                        <a href="./total.html">
+                            <i class="fa fa-pie-chart"></i>
+                            <span>Ключевые пареметры</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="./list.html">
+                            <i class="fa fa-list"></i>
+                            <span>Анкеты</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="./locations.html">
+                            <i class="fa fa-university"></i>
+                            <span>Локации</span>
+                        </a>
+                    </li>
+                    <li class="treeview">
+                        <a href="#">
+                            <i class="fa fa-cubes"></i>
+                            <span>Шаблоны</span>
+                            <span class="pull-right-container">
+                                <i class="fa fa-angle-left pull-right"></i>
+                            </span>
+                        </a>
+                        <ul class="treeview-menu">
+                            <li><a href="./list-answer-template-text.html">
+                                    <i class="round perple"></i>
+                                    <span>Шаблоны фраз</span>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="./quiz.html">
+                                    <i class="round yellow"></i>
+                                    <span>Управление
+                                        рассылкой</span>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#">
+                                    <i class="round red"></i>
+                                    <span>Алерты
+                                    </span>
+                                </a>
+                            </li>
+                        </ul>
+                    </li>
+                    <li class="active">
+                        <a href="./reference.html">
+                            <i class="fa fa-newspaper-o"></i>
+                            <span>Пользовательское соглашение</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="./user.html">
+                            <i class="fa fa-users"></i>
+                            <span>Пользователи</span>
+                        </a>
+                    </li>
+                </ul>
+            </section>
+        </aside>
+        <div class="content-wrapper">
+            <section class="content-header">
+                <div class="Breadcrumbs-top">
+                    <ul class="breadcrumb">
+                        <li><a href="#"><i class="fa fa-home pr-2"></i>Home</a></li>
+                        <li class="active">Список пользовательских соглашений</li>
+                    </ul>
+                </div>
+                <h1>
+                    Список пользовательских соглашений </h1>
+            </section>
+            <section class="content">
+                <div class="box-header">
+                    <div class="links-wrap">
+                        <div class="link-wraper">
+                            <a href="./update_reference.html">Редактировать образец соглашения</a>
+                        </div>
+                        <div class="link-wraper">
+                            <a href="./create_reference.html">Создать соглашения</a>
+                        </div>
+                    </div>
+                </div>
+                <section class="container-content">
+                    <div id="w0" class="grid-view">
+                        <div class="table-container">
+                            <table class="table table-bordered">
+                                <thead>
+                                    <tr>
+                                        <th><a href="#" data-sort="id">Id</a></th>
+                                        <th>Номер соглашения</th>
+                                        <th><a class="desc" href="#"
+                                                data-sort="date_created">Дата создания</a></th>
+                                        <th><a href="#" data-sort="date_updated">Дата
+                                                редактирования</a></th>
+                                        <th>Активность</th>
+                                        <th>Управление</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr data-key="3">
+                                        <td>3</td>
+                                        <td>Соглашение №1582040134</td>
+                                        <td>18-02-2020 15:35</td>
+                                        <td>18-04-2020 18:03</td>
+                                        <td><span class="bg-green">Активно</span></td>
+                                        <td><a class="btn btn-success" href="./update_reference.html"
+                                                title="Перейти в режим редактирования"><span
+                                                    class="glyphicon glyphicon-pencil"></span></a> <a
+                                                class="btn btn-danger" href="#"
+                                                title="Удалить запись"
+                                                onclick="return confirm('Вы действительно хотите удалить запись?')"><span
+                                                    class="glyphicon glyphicon-remove"></span></a></td>
+                                    </tr>
+                                    <tr data-key="2">
+                                        <td>2</td>
+                                        <td>Соглашение №1582037379</td>
+                                        <td>18-02-2020 14:4</td>
+                                        <td>18-02-2020 15:23</td>
+                                        <td><span class="bg-red">Не активно</span></td>
+                                        <td><a class="btn btn-success" href="./update_reference.html"
+                                                title="Перейти в режим редактирования"><span
+                                                    class="glyphicon glyphicon-pencil"></span></a> <a
+                                                class="btn btn-danger" href="#"
+                                                title="Удалить запись"
+                                                onclick="return confirm('Вы действительно хотите удалить запись?')"><span
+                                                    class="glyphicon glyphicon-remove"></span></a></td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </section>
+            </section>
+        </div>
+    </div>
+    <script src="https://rbatm.ru/admin/assets/53d77a8f/jquery.js"></script>
+    <script src="https://rbatm.ru/admin/assets/53bf7e5d/js/bootstrap.js"></script>
+    <script src="./assets/js/script.js"></script>
+</body>
+
+</html>
