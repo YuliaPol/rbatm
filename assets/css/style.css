@@ -2,13 +2,10 @@
 body {
   font-family: "Helvetica";
 }
-
-/*header navbar*/
 html,
 body {
   height: 100%;
 }
-
 /*Headeer*/
 .main-header {
   position: fixed;
