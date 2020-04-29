@@ -148,10 +148,10 @@
         </div>
     </div>
     <script src="https://rbatm.ru/admin/assets/53d77a8f/jquery.js"></script>
-    <script src="https://rbatm.ru/admin/assets/d49ba267/ckeditor.js"></script>
+    <script src="https://cdn.ckeditor.com/4.14.0/standard/ckeditor.js"></script>
     <script type="text/javascript" src="https://rbatm.ru/admin/assets/eea43ef1/js/adminlte.min.js"></script>
     <script src="./assets/js/script.js"></script>
-    <script>CKEDITOR.replace("reference-text", { "height": 400, "toolbarGroups": [{ "name": "clipboard", "groups": ["mode", "undo", "selection", "clipboard", "doctools"] }, { "name": "editing", "groups": ["find", "spellchecker", "tools", "about"] }, "/", { "name": "paragraph", "groups": ["templates", "list", "indent", "align"] }, { "name": "forms" }, "/", { "name": "styles" }, { "name": "blocks" }, "/", { "name": "basicstyles", "groups": ["basicstyles", "colors", "cleanup"] }, { "name": "links", "groups": ["links", "insert"] }, { "name": "others" }], "on": { "instanceReady": function (ev) { mihaildev.ckEditor.registerOnChange("reference-text"); } } });</script>
+    <script>CKEDITOR.replace( 'reference-text' );</script>
 </body>
 
 </html>
