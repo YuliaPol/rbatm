@@ -714,7 +714,7 @@ select.form-control:not([size]):not([multiple]) {
 }
 .user-create .btn-submit,
 .btn-custom {
-    display: block;
+    display: inline-block;
     padding: 10px 15px;
     background: #9e0909;
     border-radius: 5px;
@@ -726,6 +726,8 @@ select.form-control:not([size]):not([multiple]) {
     &:focus {
        background: #9e0909;
        opacity: 0.8;
+       color: #ffffff;
+       text-decoration: none;
     }
 }
 .unload-submit {
@@ -759,6 +761,56 @@ select.form-control:not([size]):not([multiple]) {
 }
 .select2-dropdown {
     border: 1px solid #cccccc;
+}
+.btn.btn-flat {
+    border-radius: 0;
+    -webkit-box-shadow: none;
+    -moz-box-shadow: none;
+    box-shadow: none;
+    border-width: 1px;
+}
+.bg-orange {
+    background-color: #FF851B;
+    color: #ffffff;
+    &:hover {
+        webkit-box-shadow: inset 0 0 100px rgba(0,0,0,0.2);
+        box-shadow: inset 0 0 100px rgba(0,0,0,0.2);
+        color: #ffffff;
+    }
+}
+.box-header .title-wrap {
+    background: #eeeeee;
+    padding: 20px;
+    border-bottom: solid 1px #cccccc;
+    .box-title {
+        font-size: 18px;
+    }
+}
+.box-collapsed {
+    padding: 0px 30px;
+    .box-header {
+        position: relative;
+        min-height: 50px;
+        margin-bottom: 20px;
+        border-bottom: solid 1px #cccccc;
+        .box-tools {
+            position: absolute;
+            top: 0px;
+            right: 0px;
+            .icon-show::before {
+               content: "\f067";
+            }
+        }
+    }
+    &.show .box-header .box-tools .icon-show::before {
+        content: "\f068";
+    }
+}
+.btn-custom.btn-archive {
+    background: #4692e6;
+}
+.form-wraper .btn-custom {
+    margin-bottom: 25px;
 }
 /*End content*/
 /*login page*/

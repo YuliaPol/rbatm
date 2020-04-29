@@ -39,4 +39,9 @@ $(document).ready(function () {
     $(nav).html(current);
     $('.input-status').val($(this).attr('data-value'));
   });
+  /*accordion*/
+  $('.box-show').click(function (e) {
+    $('.box-collapsed').toggleClass('show');
+    $('.box-collapsed .box-body').slideToggle(350);
+  });
 });

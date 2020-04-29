@@ -77,6 +77,7 @@ function generateCharts() {
         }
     });
 
+
     // doughnut chart
     var indexCsiChartElementPersenage = document.getElementById('index-csi-chart-persent-canvas');
     try {
@@ -85,23 +86,51 @@ function generateCharts() {
                 type: 'doughnut',
                 data: indexCsiChartData,
                 options: {
+                    animation: {
+                        duration: 500,
+                        easing: "easeOutQuart",
+                        onComplete: function () {
+                            var showPercent = true;
+                            if(this.tooltip._active){
+                                if (this.tooltip._active[0]){
+                                    showPercent = false;
+                                }
+                            }
+                            if(showPercent){
+                                var ctx = this.chart.ctx;
+                                ctx.font = 14 + "px sans-serif";
+                                ctx.textAlign = 'center';
+                                ctx.textBaseline = 'bottom';
+                                this.data.datasets.forEach(function (dataset) {
+                                  for (var i = 0; i < dataset.data.length; i++) {
+                                    var model = dataset._meta[Object.keys(dataset._meta)[0]].data[i]._model,
+                                        total = dataset._meta[Object.keys(dataset._meta)[0]].total,
+                                        mid_radius = model.innerRadius + (model.outerRadius - model.innerRadius)/2,
+                                        start_angle = model.startAngle,
+                                        end_angle = model.endAngle,
+                                        mid_angle = start_angle + (end_angle - start_angle)/2;
+                          
+                                    var x = mid_radius * Math.cos(mid_angle);
+                                    var y = mid_radius * Math.sin(mid_angle);
+                          
+                                    ctx.fillStyle = '#fff';
+                                    if (i == 3){ // Darker text color for lighter background
+                                      ctx.fillStyle = '#444';
+                                    }
+                                    var percent = String(Math.round(dataset.data[i]/total*100)) + "%";      
+                                    //Don't Display If Legend is hide or value is 0
+                                    if(dataset.data[i] != 0 && dataset._meta[0].data[i].hidden != true) {
+                                      ctx.fillText(percent, model.x + x, model.y + y + 15);
+                                    }
+                                  }
+                                }); 
+                            }              
+                        }
+                    },
                     tooltips: {
                         titleFontSize:11,
                         bodyFontSize: 11,
                         defaultFontSize: 11,
-                        callbacks: {
-                            label: function(tooltipItem, data) {
-                              var dataset = data.datasets[tooltipItem.datasetIndex];
-                              var meta = dataset._meta[Object.keys(dataset._meta)[0]];
-                              var total = meta.total;
-                              var currentValue = dataset.data[tooltipItem.index];
-                              var percentage = parseFloat((currentValue/total*100).toFixed(1));
-                              return  + percentage + '%';
-                            },
-                            title: function(tooltipItem, data) {
-                              return data.labels[tooltipItem[0].index];
-                            }
-                          }
                     },
                     responsive: true,
                     maintainAspectRatio : false,
@@ -153,8 +182,9 @@ function generateCharts() {
                             top: 10,
                             bottom: 10
                         }
-                    },
-                }
+                    }
+                },
+                
             });
             indexCsiChartPersentClass = indexCsiChartPersent;
         }
@@ -163,6 +193,7 @@ function generateCharts() {
     catch(err) {
         console.warn(err);
     }
+
     //alert chart 
     try {
         var alertStatisticChartCanvas = document.getElementById("alert-statistic-chart-canvas").getContext('2d');
@@ -189,7 +220,7 @@ function generateCharts() {
                             max: 500
                         }
                     }]
-                }
+                },
             }
         });
         alertStatisticChartClass = alertStatisticChart;

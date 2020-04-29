@@ -271,8 +271,8 @@
                                 <thead>
                                     <tr>
                                         <th>Название вопроса</th>
-                                        <th>(4) шт</th>
-                                        <th>(100) %</th>
+                                        <th>4 шт</th>
+                                        <th>100 %</th>
                                     </tr>
                                 </thead>
                                 <tbody>
@@ -301,8 +301,8 @@
                                 <thead>
                                     <tr>
                                         <th>Название вопроса</th>
-                                        <th>(15) шт</th>
-                                        <th>(100) %</th>
+                                        <th>15 шт</th>
+                                        <th>100 %</th>
                                     </tr>
                                 </th>
                                 <tbody>
@@ -338,6 +338,7 @@
 
 
     </div>
+    
     <script src="https://rbatm.ru/admin/assets/53d77a8f/jquery.js"></script>
     <script src="https://rbatm.ru/admin/assets/53bf7e5d/js/bootstrap.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/select2@4.0.13/dist/js/select2.min.js"></script>
@@ -350,7 +351,7 @@
         $(document).ready(function () {
             $('.select-search').on("select2:selecting", function(e) { 
                 $('#form_send').click();
-            });
+        });
         //change selectboxes to selectize mode to be searchable
         $(".select-search").select2({
             selectOnClose: true,
