@@ -42,7 +42,7 @@ function generateCharts() {
                     collsrFontRound = '#30cc7c';
                 }
                 ctx.restore();
-                var fontSize = rad / 1.2;
+                var fontSize = rad / 2.0;
                 ctx.font = fontSize + "px sans-serif";
                 ctx.textBaseline = "middle";
 
@@ -89,6 +89,19 @@ function generateCharts() {
                         titleFontSize:11,
                         bodyFontSize: 11,
                         defaultFontSize: 11,
+                        callbacks: {
+                            label: function(tooltipItem, data) {
+                              var dataset = data.datasets[tooltipItem.datasetIndex];
+                              var meta = dataset._meta[Object.keys(dataset._meta)[0]];
+                              var total = meta.total;
+                              var currentValue = dataset.data[tooltipItem.index];
+                              var percentage = parseFloat((currentValue/total*100).toFixed(1));
+                              return  + percentage + '%';
+                            },
+                            title: function(tooltipItem, data) {
+                              return data.labels[tooltipItem[0].index];
+                            }
+                          }
                     },
                     responsive: true,
                     maintainAspectRatio : false,
@@ -107,10 +120,10 @@ function generateCharts() {
                         var text = [];
                         text.push('<ul class="' + chart.id + '-legend" style="list-style: none; padding: 0;">');
                         for (var i = 0; i < chart.data.datasets[0].data.length; i++) {
-                            text.push('<li style="font-size: 11px;"><span style="font-size: 8px; width: 10px; height: 10px; display: inline-block; margin-right: 10px; background-color:' + chart.data.datasets[0].backgroundColor[i] + '">');
+                            text.push('<li style="font-size: 14px; line-height: 1.8;"><span style="font-size: 12px; width: 15px; height: 15px; display: inline-block; margin-right: 10px; background-color:' + chart.data.datasets[0].backgroundColor[i] + '">');
                             text.push('</span>');
                             if (chart.data.labels[i]) {
-                                text.push(chart.data.labels[i]);
+                                text.push(chart.data.labels[i] + ": " + chart.data.datasets[0].data[i]);
                             }
                             text.push('</span></li>');
                         }
@@ -171,7 +184,9 @@ function generateCharts() {
                     xAxes: [{
                         ticks: {
                             suggestedMin: 0,
-                            beginAtZero:true
+                            beginAtZero:true,
+                            min: 0,
+                            max: 500
                         }
                     }]
                 }
@@ -261,69 +276,105 @@ function checkMedia( w, period ) {
  *   function set new width for canvas
  */
 function setSize() {
-    $('#index-csi-chart-persent-canvas').attr('width', 150);
-    $('#index-csi-chart-persent-canvas').attr('height', 200);
     if( $( document ).width() > 1700){
         //line chart
         position = 'right';
         $('#alert-statistic-chart-canvas').attr('width', 1200 );
-        $('#alert-statistic-chart-canvas').attr('height', 350 );
+        $('#alert-statistic-chart-canvas').attr('height', 450 );
+
+        $('#index-csi-chart-persent-canvas').attr('width', 250);
+        $('#index-csi-chart-persent-canvas').attr('height', 250);
+    
     }
     else if( $( document ).width() > 1600){
         position = 'right';
         $('#alert-statistic-chart-canvas').attr('width', 800 );
-        $('#alert-statistic-chart-canvas').attr('height', 305 );
+        $('#alert-statistic-chart-canvas').attr('height', 405 );
+
+        $('#index-csi-chart-persent-canvas').attr('width', 300);
+        $('#index-csi-chart-persent-canvas').attr('height', 250);
     }
     else if( $( document ).width() > 1500){
         position = 'right';
         $('#alert-statistic-chart-canvas').attr('width', 800 );
-        $('#alert-statistic-chart-canvas').attr('height', 280 );
+        $('#alert-statistic-chart-canvas').attr('height', 420 );
+        
+        $('#index-csi-chart-persent-canvas').attr('width', 300);
+        $('#index-csi-chart-persent-canvas').attr('height', 250);
     }
     else if( $( document ).width() > 1400) {
         position = 'right';
         $('#alert-statistic-chart-canvas').attr('width', 800);
-        $('#alert-statistic-chart-canvas').attr('height', 280)
+        $('#alert-statistic-chart-canvas').attr('height', 380);
+                
+        $('#index-csi-chart-persent-canvas').attr('width', 250);
+        $('#index-csi-chart-persent-canvas').attr('height', 200);
     }
     else if( $( document ).width() > 1350){
         position = 'right';
         $('#alert-statistic-chart-canvas').attr('width', 800 );
-        $('#alert-statistic-chart-canvas').attr('height', 270 );
+        $('#alert-statistic-chart-canvas').attr('height', 370 );
 
+        $('#index-csi-chart-persent-canvas').attr('width', 250);
+        $('#index-csi-chart-persent-canvas').attr('height', 200);
     }
     else if( $( document ).width() > 1300){
         position = 'bottom';
         $('#alert-statistic-chart-canvas').attr('width', 800 );
-        $('#alert-statistic-chart-canvas').attr('height', 290 );
+        $('#alert-statistic-chart-canvas').attr('height', 380 );
+        
+        $('#index-csi-chart-persent-canvas').attr('width', 220);
+        $('#index-csi-chart-persent-canvas').attr('height', 170);
     }
     else if( $( document ).width() > 1200 ){
         position = 'bottom';
         $('#alert-statistic-chart-canvas').attr('width', 800 );
-        $('#alert-statistic-chart-canvas').attr('height', 350 );
+        $('#alert-statistic-chart-canvas').attr('height', 380 );
+                
+        $('#index-csi-chart-persent-canvas').attr('width', 220);
+        $('#index-csi-chart-persent-canvas').attr('height', 170);
     }
     else if( $( document ).width() > 1000 ){
         position = 'bottom';
         $('#alert-statistic-chart-canvas').attr('width', 800 );
-        $('#alert-statistic-chart-canvas').attr('height', 290 );
+        $('#alert-statistic-chart-canvas').attr('height', 380 );
+
+                        
+        $('#index-csi-chart-persent-canvas').attr('width', 220);
+        $('#index-csi-chart-persent-canvas').attr('height', 170);
     }
     else if( $( document ).width() > 767 ){
         position = 'bottom';
         $('#alert-statistic-chart-canvas').attr('width', 800 );
-        $('#alert-statistic-chart-canvas').attr('height', 340 );
+        $('#alert-statistic-chart-canvas').attr('height', 380 );
+
+                        
+        $('#index-csi-chart-persent-canvas').attr('width', 220);
+        $('#index-csi-chart-persent-canvas').attr('height', 170);
     }
     else if( $( document ).width() > 600 ){
         position = 'bottom';
         $('#alert-statistic-chart-canvas').attr('width', 800 );
         $('#alert-statistic-chart-canvas').attr('height', 340 );
+                                
+        $('#index-csi-chart-persent-canvas').attr('width', 220);
+        $('#index-csi-chart-persent-canvas').attr('height', 170);
     }
     else if( $( document ).width() < 600 ){
         position = 'bottom';
         $('#alert-statistic-chart-canvas').attr('width', 800 );
         $('#alert-statistic-chart-canvas').attr('height', 440 );
+                                
+        $('#index-csi-chart-persent-canvas').attr('width', 220);
+        $('#index-csi-chart-persent-canvas').attr('height', 170);
     }
     else {
         position = 'bottom';
         $('#alert-statistic-chart-canvas').attr('width', 800 );
         $('#alert-statistic-chart-canvas').attr('height', 280 );
+                                
+        $('#index-csi-chart-persent-canvas').attr('width', 220);
+        $('#index-csi-chart-persent-canvas').attr('height', 170);
     }
 
 } // add media sizes

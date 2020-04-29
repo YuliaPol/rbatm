@@ -9,6 +9,7 @@
     <link href="https://rbatm.ru/admin/assets/53bf7e5d/css/bootstrap.css" rel="stylesheet">
     <link href="//netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap-glyphicons.css" rel="stylesheet">
     <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/daterangepicker/daterangepicker.css" />
+    <link href="https://cdn.jsdelivr.net/npm/select2@4.0.13/dist/css/select2.min.css" rel="stylesheet" />
     <link rel="stylesheet" href="./assets/css/style.css">
 </head>
 
@@ -76,7 +77,7 @@
                                     <span>Шаблоны фраз</span>
                                 </a>
                             </li>
-                            <!-- <li>
+                            <li>
                                 <a href="./quiz.html">
                                     <i class="round yellow"></i>
                                     <span>Управление
@@ -89,7 +90,7 @@
                                     <span>Алерты
                                     </span>
                                 </a>
-                            </li> -->
+                            </li>
                         </ul>
                     </li>
                     <li>
@@ -120,10 +121,10 @@
             <section class="content">
                 <div class="box-header">
                     <form method="get" id="filter-form">
-                        <div class="box-wrap">
+                        <div class="box-wrap  filter-wrap">
                             <div class="box">
                                 <h6>Регион</h6>
-                                <select class="form-control input-sm" name="AnswersSearch[region]" onchange="dpfunc()">
+                                <select class="form-control select-search" name="AnswersSearch[region]">
                                     <option value="all">Все</option>
                                     <optgroup label="Регион">
                                         <option value="Центр">Центр</option>
@@ -134,7 +135,7 @@
                             </div>
                             <div class="box">
                                 <h6>Город</h6>
-                                <select class="form-control input-sm" name="AnswersSearch[city]" onchange="dpfunc()">
+                                <select class="form-control select-search" name="AnswersSearch[city]">
                                     <option value="all">Все</option>
                                     <optgroup label="Город">
                                         <option value="Всеволожск">Всеволожск</option>
@@ -154,8 +155,7 @@
                             </div>
                             <div class="box">
                                 <h6>Локация</h6>
-                                <select class="form-control input-sm" name="AnswersSearch[location]"
-                                    onchange="dpfunc()">
+                                <select class="form-control select-search" name="AnswersSearch[location]">
                                     <option value="all">Локация</option>
                                     <optgroup label="Макрорегионы">
                                         <option value="Город Санкт-Петербург Проспект Искровский Дом 29, кор. 2, лит.А">
@@ -274,8 +274,7 @@
                             </div>
                             <div class="box">
                                 <h6>Оценка</h6>
-                                <select class="form-control input-sm" name="AnswersSearch[review_rating]"
-                                    onchange="dpfunc()">
+                                <select class="form-control select-search" name="AnswersSearch[review_rating]">
                                     <option value="all">Все</option>
                                     <optgroup label="Оценка">
                                         <option value="1">Только по оценке</option>
@@ -408,10 +407,10 @@
                                     </tr>
                                     <tr id="w0-filters" class="filters">
                                         <td>&nbsp;</td>
-                                        <td><input type="text" class="form-control" name="AnswersSearch[id_atm]"></td>
+                                        <td><input type="text" class="form-control" name="AnswersSearch[id_atm]" onkeyup="this.value=this.value.replace(/[^\d]/,'')"></td>
                                         <td><input type="text" class="form-control" name="AnswersSearch[name_client]">
                                         </td>
-                                        <td><input type="text" class="form-control" name="AnswersSearch[phone]"></td>
+                                        <td><input type="text" class="form-control" name="AnswersSearch[phone]" onkeyup="this.value=this.value.replace(/[^\d]/,'')"></td>
                                         <td><input type="text" class="form-control" name="AnswersSearch[email]"></td>
                                         <td><input type="text" class="form-control" name="AnswersSearch[id_city]"></td>
                                         <td><select class="form-control" name="AnswersSearch[review]">
@@ -419,8 +418,22 @@
                                                 <option value="107">Нет</option>
                                                 <option value="all">Выбрать всё</option>
                                             </select></td>
-                                        <td><input type="text" class="form-control"
-                                                name="AnswersSearch[id_answer_status]"></td>
+                                        <td>
+                                            <div class="status-select">
+                                                <input type="text" class="input-status" type="form-control" name="AnswersSearch[id_answer_status]">
+                                                <div class="nav-select"></div>
+                                                <ul class="select-list">
+                                                    <li data-value="Новый" ><span class="status-square status-new"></span></li>
+                                                    <li data-value="Просрочен" ><span class="status-square status-expired"></span></li>
+                                                    <li data-value="В работе" ><span class="status-square status-inwork"></span></li>
+                                                    <li data-value="На доработке" ><span class="status-square status-revision"></span></li>
+                                                    <li data-value="Архив" ><span class="status-square status-archive"></span></li>
+                                                    <li data-value="На подтверждение" ><span class="status-square status-confirm"></span></li>
+                                                    <li data-value="Переадресация" ><span class="status-square status-address"></span></li>
+                                                    <li data-value="all" >Все</li>
+                                                </ul>
+                                            </div>
+                                        </td>
                                         <td><input type="text" id="answerssearch-date_created" class="form-control"
                                                 name="AnswersSearch[date_created]"
                                                 data-krajee-daterangepicker="daterangepicker_dc815d7a">
@@ -668,9 +681,19 @@
     <script type="text/javascript" src="https://cdn.jsdelivr.net/momentjs/latest/moment.min.js"></script>
     <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/daterangepicker/daterangepicker.min.js"></script>
     <script src="https://rbatm.ru/admin/assets/53bf7e5d/js/bootstrap.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/select2@4.0.13/dist/js/select2.min.js"></script>
     <script src="./assets/js/script.js"></script>
     <script>
-        function dpfunc() { $('#form_send').click(); }
+        $(document).ready(function () {
+            $('.select-search').on("select2:selecting", function(e) { 
+                $('#form_send').click();
+            });
+        //change selectboxes to selectize mode to be searchable
+        $(".select-search").select2({
+            selectOnClose: true,
+            closeOnSelect: true
+            });
+        });
     </script>
     <script>
         $(function () {

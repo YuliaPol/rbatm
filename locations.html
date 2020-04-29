@@ -8,6 +8,7 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.css">
     <link href="https://rbatm.ru/admin/assets/53bf7e5d/css/bootstrap.css" rel="stylesheet">
     <link href="//netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap-glyphicons.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/select2@4.0.13/dist/css/select2.min.css" rel="stylesheet" />
     <link rel="stylesheet" href="./assets/css/style.css">
 </head>
 
@@ -75,7 +76,7 @@
                                     <span>Шаблоны фраз</span>
                                 </a>
                             </li>
-                            <!-- <li>
+                            <li>
                                 <a href="./quiz.html">
                                     <i class="round yellow"></i>
                                     <span>Управление
@@ -88,7 +89,7 @@
                                     <span>Алерты
                                     </span>
                                 </a>
-                            </li> -->
+                            </li>
                         </ul>
                     </li>
                     <li>
@@ -130,10 +131,10 @@
                         </div>
                     </div>
                     <form method="get" id="filter-form">
-                        <div class="box-wrap">
+                        <div class="box-wrap filter-wrap">
                             <div class="box">
                                 <h6>Регион</h6>
-                                <select class="form-control input-sm" name="AnswersSearch[region]" onchange="dpfunc()">
+                                <select class="form-control select-search" name="AnswersSearch[region]">
                                     <option value="all">Все</option>
                                     <optgroup label="Регион">
                                         <option value="Центр">Центр</option>
@@ -144,7 +145,7 @@
                             </div>
                             <div class="box">
                                 <h6>Город</h6>
-                                <select class="form-control input-sm" name="AnswersSearch[city]" onchange="dpfunc()">
+                                <select class="form-control select-search" name="AnswersSearch[city]">
                                     <option value="all">Все</option>
                                     <optgroup label="Город">
                                         <option value="Всеволожск">Всеволожск</option>
@@ -164,8 +165,8 @@
                             </div>
                             <div class="box">
                                 <h6>Локация</h6>
-                                <select class="form-control input-sm" name="AnswersSearch[location]"
-                                    onchange="dpfunc()">
+                                <select class="form-control select-search" name="AnswersSearch[location]"
+                                   >
                                     <option value="all">Локация</option>
                                     <optgroup label="Макрорегионы">
                                         <option value="Город Санкт-Петербург Проспект Искровский Дом 29, кор. 2, лит.А">
@@ -303,7 +304,7 @@
                     </div>
                     <div id="w0" class="grid-view">
                         <div class="table-container">
-                            <table class="table table-bordered">
+                            <table class="table table-bordered locations-table">
                                 <thead>
                                     <tr>
                                         <th><a href="#?sort=id_atm" data-sort="id_atm">Код</a></th>
@@ -353,6 +354,9 @@
                                             <a href="https://rbatm.ru/backend/web/qr-code/158703654312339code.jpg" target="_blank">
                                                 <img src="https://rbatm.ru/backend/web/qr-code/158703654312339code.jpg" width="50px" alt="">
                                             </a>
+                                            <a href="#" class="btn btn-info " alt="Ссылка на анкету после сканирования" target="_blank">
+                                                <span class="glyphicon glyphicon-share"></span>
+                                            </a>
                                         </td>
                                     </tr>
                                     <tr data-key="976">
@@ -379,6 +383,9 @@
                                             <a href="https://rbatm.ru/backend/web/qr-code/15870365431647code.jpg" target="_blank">
                                                 <img src="https://rbatm.ru/backend/web/qr-code/15870365431647code.jpg" width="50px" alt="">
                                             </a>
+                                            <a href="#" class="btn btn-info " alt="Ссылка на анкету после сканирования" target="_blank">
+                                                <span class="glyphicon glyphicon-share"></span>
+                                            </a>
                                         </td>
                                     </tr>
                                     <tr data-key="977">
@@ -399,6 +406,9 @@
                                         <td>
                                             <a href="https://rbatm.ru/backend/web/qr-code/15870365438986code.jpg" target="_blank">
                                                 <img src="https://rbatm.ru/backend/web/qr-code/15870365438986code.jpg" width="50px" alt="">
+                                            </a>
+                                            <a href="#" class="btn btn-info " alt="Ссылка на анкету после сканирования" target="_blank">
+                                                <span class="glyphicon glyphicon-share"></span>
                                             </a>
                                         </td>
                                     </tr>
@@ -421,6 +431,9 @@
                                             <a href="https://rbatm.ru/backend/web/qr-code/15870365433209code.jpg" target="_blank">
                                                 <img src="https://rbatm.ru/backend/web/qr-code/15870365433209code.jpg" width="50px" alt="">
                                             </a>
+                                            <a href="#" class="btn btn-info " alt="Ссылка на анкету после сканирования" target="_blank">
+                                                <span class="glyphicon glyphicon-share"></span>
+                                            </a>
                                         </td>
                                     </tr>
                                     <tr data-key="979">
@@ -439,6 +452,9 @@
                                             <a href="https://rbatm.ru/backend/web/qr-code/15870365444502code.jpg" target="_blank">
                                                 <img src="https://rbatm.ru/backend/web/qr-code/15870365444502code.jpg" width="50px" alt="">
                                             </a>
+                                            <a href="#" class="btn btn-info " alt="Ссылка на анкету после сканирования" target="_blank">
+                                                <span class="glyphicon glyphicon-share"></span>
+                                            </a>
                                         </td>
                                     </tr>
                                     <tr data-key="980">
@@ -455,6 +471,9 @@
                                         <td>
                                             <a href="https://rbatm.ru/backend/web/qr-code/158703654416727code.jpg" target="_blank">
                                                 <img src="https://rbatm.ru/backend/web/qr-code/158703654416727code.jpg" width="50px" alt="">
+                                            </a>
+                                            <a href="#" class="btn btn-info " alt="Ссылка на анкету после сканирования" target="_blank">
+                                                <span class="glyphicon glyphicon-share"></span>
                                             </a>
                                         </td>
                                     </tr>
@@ -474,6 +493,9 @@
                                             <a href="https://rbatm.ru/backend/web/qr-code/15870365445315code.jpg" target="_blank">
                                                 <img src="https://rbatm.ru/backend/web/qr-code/15870365445315code.jpg" width="50px" alt="">
                                             </a>
+                                            <a href="#" class="btn btn-info " alt="Ссылка на анкету после сканирования" target="_blank">
+                                                <span class="glyphicon glyphicon-share"></span>
+                                            </a>
                                         </td>
                                     </tr>
                                     <tr data-key="982">
@@ -491,6 +513,9 @@
                                             <a href="https://rbatm.ru/backend/web/qr-code/158703654410370code.jpg" target="_blank">
                                                 <img src="https://rbatm.ru/backend/web/qr-code/158703654410370code.jpg" width="50px" alt="">
                                             </a>
+                                            <a href="#" class="btn btn-info " alt="Ссылка на анкету после сканирования" target="_blank">
+                                                <span class="glyphicon glyphicon-share"></span>
+                                            </a>
                                         </td>
                                     </tr>
                                     <tr data-key="983">
@@ -506,7 +531,11 @@
                                         <td>Северо-Западный</td>
                                         <td>
                                             <a href="https://rbatm.ru/backend/web/qr-code/15870365444059code.jpg" target="_blank">
-                                                <img src="https://rbatm.ru/backend/web/qr-code/15870365444059code.jpg" width="50px" alt=""></a>
+                                                <img src="https://rbatm.ru/backend/web/qr-code/15870365444059code.jpg" width="50px" alt="">
+                                            </a>
+                                            <a href="#" class="btn btn-info " alt="Ссылка на анкету после сканирования" target="_blank">
+                                                <span class="glyphicon glyphicon-share"></span>
+                                            </a>
                                         </td>
                                     </tr>
                                     <tr data-key="984">
@@ -523,6 +552,9 @@
                                         <td>
                                             <a href="https://rbatm.ru/backend/web/qr-code/158703654416793code.jpg" target="_blank">
                                                 <img src="https://rbatm.ru/backend/web/qr-code/158703654416793code.jpg" width="50px" alt="">
+                                            </a>
+                                            <a href="#" class="btn btn-info " alt="Ссылка на анкету после сканирования" target="_blank">
+                                                <span class="glyphicon glyphicon-share"></span>
                                             </a>
                                         </td>
                                     </tr>
@@ -542,6 +574,9 @@
                                             <a href="https://rbatm.ru/backend/web/qr-code/158703654417148code.jpg" target="_blank">
                                                 <img src="https://rbatm.ru/backend/web/qr-code/158703654417148code.jpg" width="50px" alt="">
                                             </a>
+                                            <a href="#" class="btn btn-info " alt="Ссылка на анкету после сканирования" target="_blank">
+                                                <span class="glyphicon glyphicon-share"></span>
+                                            </a>
                                         </td>
                                     </tr>
                                     <tr data-key="986">
@@ -558,6 +593,9 @@
                                         <td>
                                             <a href="https://rbatm.ru/backend/web/qr-code/158703654412753code.jpg" target="_blank">
                                                 <img src="https://rbatm.ru/backend/web/qr-code/158703654412753code.jpg" width="50px" alt="">
+                                            </a>
+                                            <a href="#" class="btn btn-info " alt="Ссылка на анкету после сканирования" target="_blank">
+                                                <span class="glyphicon glyphicon-share"></span>
                                             </a>
                                         </td>
                                     </tr>
@@ -576,6 +614,9 @@
                                             <a href="https://rbatm.ru/backend/web/qr-code/15870365446406code.jpg" target="_blank">
                                                 <img src="https://rbatm.ru/backend/web/qr-code/15870365446406code.jpg" width="50px" alt="">
                                             </a>
+                                            <a href="#" class="btn btn-info " alt="Ссылка на анкету после сканирования" target="_blank">
+                                                <span class="glyphicon glyphicon-share"></span>
+                                            </a>
                                         </td>
                                     </tr>
                                     <tr data-key="988">
@@ -593,6 +634,9 @@
                                             <a href="https://rbatm.ru/backend/web/qr-code/15870365449270code.jpg" target="_blank">
                                                 <img src="https://rbatm.ru/backend/web/qr-code/15870365449270code.jpg" width="50px" alt="">
                                             </a>
+                                            <a href="#" class="btn btn-info " alt="Ссылка на анкету после сканирования" target="_blank">
+                                                <span class="glyphicon glyphicon-share"></span>
+                                            </a>
                                         </td>
                                     </tr>
                                     <tr data-key="989">
@@ -609,6 +653,9 @@
                                         <td>
                                             <a href="https://rbatm.ru/backend/web/qr-code/158703654414300code.jpg" target="_blank">
                                                 <img src="https://rbatm.ru/backend/web/qr-code/158703654414300code.jpg" width="50px" alt="">
+                                            </a>
+                                            <a href="#" class="btn btn-info " alt="Ссылка на анкету после сканирования" target="_blank">
+                                                <span class="glyphicon glyphicon-share"></span>
                                             </a>
                                         </td>
                                     </tr>
@@ -628,6 +675,9 @@
                                             <a href="https://rbatm.ru/backend/web/qr-code/15870365448331code.jpg" target="_blank">
                                                 <img src="https://rbatm.ru/backend/web/qr-code/15870365448331code.jpg" width="50px" alt="">
                                             </a>
+                                            <a href="#" class="btn btn-info " alt="Ссылка на анкету после сканирования" target="_blank">
+                                                <span class="glyphicon glyphicon-share"></span>
+                                            </a>
                                         </td>
                                     </tr>
                                     <tr data-key="991">
@@ -646,6 +696,9 @@
                                             <a href="https://rbatm.ru/backend/web/qr-code/158703654417966code.jpg" target="_blank">
                                                 <img src="https://rbatm.ru/backend/web/qr-code/158703654417966code.jpg" width="50px" alt="">
                                             </a>
+                                            <a href="#" class="btn btn-info " alt="Ссылка на анкету после сканирования" target="_blank">
+                                                <span class="glyphicon glyphicon-share"></span>
+                                            </a>
                                         </td>
                                     </tr>
                                     <tr data-key="992">
@@ -662,6 +715,9 @@
                                         <td>
                                             <a href="https://rbatm.ru/backend/web/qr-code/15870365441257code.jpg" target="_blank">
                                                 <img src="https://rbatm.ru/backend/web/qr-code/15870365441257code.jpg" width="50px" alt="">
+                                            </a>
+                                            <a href="#" class="btn btn-info " alt="Ссылка на анкету после сканирования" target="_blank">
+                                                <span class="glyphicon glyphicon-share"></span>
                                             </a>
                                         </td>
                                     </tr>
@@ -680,6 +736,9 @@
                                             <a href="https://rbatm.ru/backend/web/qr-code/15870365446387code.jpg" target="_blank">
                                                 <img src="https://rbatm.ru/backend/web/qr-code/15870365446387code.jpg" width="50px" alt="">
                                             </a>
+                                            <a href="#" class="btn btn-info " alt="Ссылка на анкету после сканирования" target="_blank">
+                                                <span class="glyphicon glyphicon-share"></span>
+                                            </a>
                                         </td>
                                     </tr>
                                     <tr data-key="994">
@@ -696,6 +755,9 @@
                                         <td>
                                             <a href="https://rbatm.ru/backend/web/qr-code/158703654416906code.jpg" target="_blank">
                                                 <img src="https://rbatm.ru/backend/web/qr-code/158703654416906code.jpg" width="50px" alt="">
+                                            </a>
+                                            <a href="#" class="btn btn-info " alt="Ссылка на анкету после сканирования" target="_blank">
+                                                <span class="glyphicon glyphicon-share"></span>
                                             </a>
                                         </td>
                                     </tr>
@@ -718,11 +780,21 @@
     </div>
     <script src="https://rbatm.ru/admin/assets/53d77a8f/jquery.js"></script>
     <script src="https://rbatm.ru/admin/assets/53bf7e5d/js/bootstrap.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/select2@4.0.13/dist/js/select2.min.js"></script>
+
     <script src="./assets/js/script.js"></script>
     <script>
-        function dpfunc() { $('#form_send').click(); }
+        $(document).ready(function () {
+            $('.select-search').on("select2:selecting", function(e) { 
+                $('#form_send').click();
+            });
+        //change selectboxes to selectize mode to be searchable
+        $(".select-search").select2({
+            selectOnClose: true,
+            closeOnSelect: true
+            });
+        });
     </script>
-
 </body>
 
 </html>

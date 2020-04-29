@@ -147,6 +147,10 @@ body {
                     white-space: normal;
                     display: block;
                 }
+                &.treeview>a {
+                    pointer-events: none;
+                    cursor: default;
+                }
                 .treeview-menu {
                     padding: 0px;
                     list-style: none;
@@ -317,11 +321,14 @@ select.form-control:not([size]):not([multiple]) {
     h3 {
         padding-left: 15px;
         padding-right: 15px;
+        margin-top: 0px;
+        margin-bottom: 5px;
     }
     .flex-box-csi-chart {
         display: flex;
         justify-content: center;
         align-items: center;
+        height: 100%;
     }
     .chart-container{
         padding: 20px;
@@ -332,6 +339,8 @@ select.form-control:not([size]):not([multiple]) {
             padding-bottom: 10px;
             width: 100%;
             height: 100%;
+            padding-left: 15px;
+            padding-right: 15px;
         }
         .alert-statistic {
             background-color: #ffffff;
@@ -339,6 +348,8 @@ select.form-control:not([size]):not([multiple]) {
             padding-bottom: 10px;
             width: 100%;
             height: 100%;
+            padding-left: 15px;
+            padding-right: 15px;
         }
     }
 }
@@ -492,8 +503,8 @@ select.form-control:not([size]):not([multiple]) {
     }
     .status-square {
         display: inline-block;
-        width: 10px;
-        height: 10px;
+        width: 15px;
+        height: 15px;
         border-radius: 1px;
         &.status-address {
             background: #b379a8;
@@ -517,6 +528,71 @@ select.form-control:not([size]):not([multiple]) {
             background: #00ad5e;
         }
     }
+}
+.status-select {
+    position: relative;
+    input {
+        display: none;
+    }
+    .nav-select {
+        display: block;
+        width: 100%;
+        height: 34px;
+        width: 52px;
+        text-align: center;
+        padding: 8px 8px;
+        font-size: 14px;
+        line-height: 1.42857143;
+        color: #555555;
+        background-color: #fff;
+        background-image: none;
+        border: 1px solid #ccc;
+        border-radius: 4px;
+        -webkit-box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075);
+        box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075);
+        -webkit-transition: border-color ease-in-out .15s, box-shadow ease-in-out .15s;
+        -o-transition: border-color ease-in-out .15s, box-shadow ease-in-out .15s;
+        -webkit-transition: border-color ease-in-out .15s, -webkit-box-shadow ease-in-out .15s;
+        transition: border-color ease-in-out .15s, -webkit-box-shadow ease-in-out .15s;
+        transition: border-color ease-in-out .15s, box-shadow ease-in-out .15s;
+        transition: border-color ease-in-out .15s, box-shadow ease-in-out .15s, -webkit-box-shadow ease-in-out .15s;
+    }
+    .select-list {
+        display: none;
+        position: absolute;
+        left: 0px;
+        right: 0px;
+        background: #ffffff;
+        list-style: none;
+        padding: 0px;
+        border: 1px solid #ccc;
+        border-radius: 4px;
+        li {
+            text-align: center;
+            padding: 5px 10px;
+        }
+    }
+}
+.locations-table {
+    td:nth-child(2),
+    td:nth-child(3),
+    td:nth-child(4) {
+        position: relative;
+        padding-right: 25px;
+        .btn-edit {
+           position: absolute;
+           top: 0px;
+           right: 0px;
+        }
+    }
+}
+/*locations name*/
+.locations-table td:nth-child(4) {
+    max-width: 400px;
+}
+/*Qr td*/
+.locations-table td:last-child {
+    white-space: nowrap;;
 }
 .grid-view .summary {
     padding-bottom: 10px;
@@ -670,6 +746,20 @@ select.form-control:not([size]):not([multiple]) {
 .btn-hide {
     display: none;
 }
+.box-header .filter-wrap
+{
+    .select2-container {
+        width: 100% !important;
+    }
+    .select2-container--default .select2-selection--single {
+        width: 100%;
+        border: 0px;
+        outline: none;
+    }
+}
+.select2-dropdown {
+    border: 1px solid #cccccc;
+}
 /*End content*/
 /*login page*/
 .login-page {
@@ -717,6 +807,11 @@ select.form-control:not([size]):not([multiple]) {
     }
 }
 /*End login*/
+/*Hide menu points*/
+.wrapper .main-sidebar .sidebar-menu li .treeview-menu li:nth-child(2),
+.wrapper .main-sidebar .sidebar-menu li .treeview-menu li:nth-child(3) {
+    display: none;
+}
 /*Media*/
 @media (max-width: 1095px) {
     .chart-wrapper {
